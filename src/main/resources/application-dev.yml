@@ -10,7 +10,7 @@ server:
 ---
 spring:
   datasource:
-    url: ${MYSQL_URL:jdbc:mysql://localhost:3306/user}
+    url: ${MYSQL_URL:jdbc:mysql://localhost:3306/homestay_booking}
     username: ${MYSQL_USERNAME:root}
     password: ${MYSQL_PASSWORD:Khai2604@}
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -29,5 +29,12 @@ open:
 jwt:
   privateKey: classpath:private.pem
   publicKey: classpath:public.pem
+  expiration:
+    access-token: 8000
+    refresh-token: 8000
+---
+logging:
+  file:
+    name: app.log
 
 
