@@ -1,17 +1,21 @@
 package com.example.homestay.dto.request;
 
+import lombok.*;
 import java.util.List;
 
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class HomestayUpdateRequest {
 
     private String name;
     private String description;
-    private String type;
-    private Boolean status;
+    private Integer status;
+    private Integer districtId;
     private Integer guest;
-    private List<String> images;
     private Double rating;
     private Integer reviewCount;
 
-    // Getters and Setters
 }

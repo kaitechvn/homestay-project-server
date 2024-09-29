@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ExistingException extends AbstractApiException{
+public class ExistingException extends ApiException{
 
     public ExistingException(ErrorCode errorCode) {
         super(errorCode);

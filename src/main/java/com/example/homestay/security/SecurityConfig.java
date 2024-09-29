@@ -13,6 +13,7 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.converter.RsaKeyConverters;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -33,10 +34,11 @@ import static org.springframework.security.config.http.SessionCreationPolicy.STA
 @EnableWebSecurity
 @EnableMethodSecurity
 @RequiredArgsConstructor
-public class SecurityConfig {
+public class SecurityConfig  {
 
     private final String[] PUBLIC_ENDPOINTS = {
-             "/auth/**", "/swagger-ui/**", "/v3/api-docs/**"
+             "/auth/**", "/swagger-ui/**", "/v3/api-docs/**", "/homestays/**",
+            "/payment/**"
     };
 
     private final RestAccessDeniedHandler restAccessDeniedHandler;
@@ -52,12 +54,12 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .cors(Customizer.withDefaults())
-                .csrf(csrf -> csrf.disable())
+                .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))
                 .authorizeHttpRequests(request ->  request
                                 .requestMatchers(PUBLIC_ENDPOINTS).permitAll()
-                                .requestMatchers("/admin/**").hasRole("ADMIN")
-                                .requestMatchers("/user/**").hasAnyRole("ADMIN","USER")
+//                                .requestMatchers("/admin/**").hasRole("ADMIN")
+//                                .requestMatchers("/user/**").hasAnyRole("ADMIN","USER")
                                 .anyRequest().authenticated())
 
 
@@ -89,10 +91,7 @@ public class SecurityConfig {
     @Bean
     public JwtDecoder jwtDecoder() {
         RSAPublicKey publicKey = readPublicKey(publicKeyResource);
-        NimbusJwtDecoder jwtDecoder = NimbusJwtDecoder.withPublicKey(publicKey).build();
-
-//        jwtDecoder.setJwtValidator();
-        return jwtDecoder;
+        return NimbusJwtDecoder.withPublicKey(publicKey).build();
     }
 
     private static RSAPublicKey readPublicKey(Resource resource) throws Exception {
@@ -108,6 +107,7 @@ public class SecurityConfig {
         JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
         JwtGrantedAuthoritiesConverter grantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
         grantedAuthoritiesConverter.setAuthoritiesClaimName("role");
+        grantedAuthoritiesConverter.setAuthorityPrefix(""); // This removes the ROLE_ prefix
         converter.setJwtGrantedAuthoritiesConverter(grantedAuthoritiesConverter);
         return converter;
     }

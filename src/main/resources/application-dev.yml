@@ -16,25 +16,41 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
 ---
-open:
-  api:
-    title: API Backend Docs
-    version: v1.0.0
-    description: Meta API services
-    serverUrl: http://localhost:8080
-    serverName: development server
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+---
+file:
+  max-file-size: 2097152  # 1 * 1024 * 1024 1MB
 ---
 jwt:
   privateKey: classpath:private.pem
   publicKey: classpath:public.pem
   expiration:
     access-token: 8000
-    refresh-token: 8000
+    refresh-token: 10000
 ---
 logging:
   file:
     name: app.log
+---
+cors:
+  allowed:
+    origins: ${FRONT_END_URL:http://localhost:5173}
+---
+payment:
+  vnPay:
+    url: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
+    returnUrl: http://localhost:8080/api/payment/vn-pay-callback
+    tmnCode: JMEGBUDB
+    secretKey: 89Q7V4XP8PJDURBR4MX03YNL0K0C7CGD
+    version: 2.1.0
+    command: pay
+    orderType: other
+
+
 
 

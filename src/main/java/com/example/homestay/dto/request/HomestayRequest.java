@@ -16,15 +16,13 @@ public class HomestayRequest {
 
     private String description;
 
-    @NotNull(message = "Type is required")
-    private String type;
-
-    @NotNull(message = "Status is required")
-    private Boolean status;
-
-    @NotNull(message = "GuestS store is required")
+    @NotNull(message = "Guest count is required")
     private Integer guests;
 
     private List<String> images;
 
+    private Integer status;
+
+    @NotNull(message = "District is required")
+    private Integer districtId;
 }

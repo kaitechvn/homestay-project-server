@@ -17,5 +17,6 @@ public @interface PhoneNumber {
 
     Class<? extends Payload>[] payload() default {};
 
-    PhoneType country(); // Parameter to specify phone type
+    PhoneType country();
 }
+

@@ -12,7 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class AuthLoginRequest {
 
-    @NotBlank(message = "ABC")
+    @NotBlank(message = "USERNAME_BLANK")
     private String username;
 
     @NotBlank(message = "PASSWORD_BLANK")

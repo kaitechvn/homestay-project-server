@@ -16,10 +16,10 @@ public abstract class AuditEntity {
 
     @CreationTimestamp
     @Column(name = "created_at")
-    private ZonedDateTime createAt;
+    private ZonedDateTime createdAt;
 
     @UpdateTimestamp
     @Column(name = "updated_at")
-    private ZonedDateTime UpdatedAt;
+    private ZonedDateTime updatedAt;
 
 }

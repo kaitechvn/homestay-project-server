@@ -15,11 +15,9 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class UserRequest {
 
-    private String firstName;
+    private String fullname;
 
-    private String lastName;
-
-    @NotBlank(message = "USER_BLANK")
+    @NotBlank(message = "USERNAME_BLANK")
     private String username;
 
     @NotBlank(message = "PASSWORD_BLANK")
@@ -27,18 +25,18 @@ public class UserRequest {
     private String password;
 
     @NotBlank(message = "EMAIL_BLANK")
-    @Email(regexp = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", message = "EMAIL_INVALID")
+    @Email(regexp = "^[A-Za-z0-9+_.-]+@(.+)$", message = "EMAIL_INVALID")
     private String email;
 
-    @NotBlank(message = "PHONE_BLANK")
-    @PhoneNumber(country = PhoneType.VIETNAMESE, message = "PHONE_INVALID")
-    private String phoneNumber;
-
-    @NotBlank
     private String address;
 
+    @PhoneNumber(country = PhoneType.VIETNAMESE, message = "PHONE_INVALID")
+    private String phone;
+
     @NotNull(message = "DOB_BLANK")
-//    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private LocalDate dOb;
+    private LocalDate dob;
+
+    private Integer status;
+    private Integer role;
 
 }

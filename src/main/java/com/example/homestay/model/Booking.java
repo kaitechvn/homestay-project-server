@@ -1,9 +1,9 @@
 package com.example.homestay.model;
 
+import com.example.homestay.enums.BookingStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.time.LocalDate;
 
 @Entity
@@ -16,28 +16,34 @@ public class Booking {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "homestay_id", nullable = false)
+    @JoinColumn(name = "homestay_id")
     private Homestay homestay;
 
-    @Column(name = "checkin_date", nullable = false)
+    @Column(name = "contact_name")
+    private String contactName;
+
+    @Column(name = "contact_phone")
+    private String contactPhone;
+
+    @Column(name = "contact_email")
+    private String contactEmail;
+
+    @Column(name = "checkin_date")
     private LocalDate checkinDate;
 
-    @Column(name = "checkout_date", nullable = false)
+    @Column(name = "checkout_date")
     private LocalDate checkoutDate;
 
     private Integer guests;
 
-    private Boolean status;
+    @Enumerated(EnumType.STRING)
+    private BookingStatus status;
 
-    private Double subtotal;
-    private Double discount;
-
-    @Column(name = "total_amount", nullable = false)
-    private Double totalAmount;
-
+    @Column(name = "total_amount")
+    private Integer totalAmount;
 }
 
