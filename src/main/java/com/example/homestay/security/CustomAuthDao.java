@@ -18,16 +18,14 @@ public class CustomAuthDao implements UserDetailsService {
 
     private final UserRepository userRepository;
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        @Override
+        public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        log.info("loading user by username: {}", username);
+            log.info("loading user by username: {}", username);
 
-        User user = userRepository.findByUsername(username);
-        if (user == null) {
-            throw new NotFoundException(ErrorCode.USER_NOT_FOUND);
+            User user = userRepository.findByUsername(username)
+                    .orElseThrow(() -> new NotFoundException(ErrorCode.USER_NOT_FOUND));
+
+            return user;
         }
-
-        return user;
-    }
 }

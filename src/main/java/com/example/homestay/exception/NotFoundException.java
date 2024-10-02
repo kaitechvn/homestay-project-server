@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class NotFoundException extends AbstractApiException {
+public class NotFoundException extends ApiException {
 
     public NotFoundException(ErrorCode errorCode) {
         super(errorCode);

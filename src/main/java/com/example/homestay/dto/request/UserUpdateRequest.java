@@ -16,17 +16,19 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class UserUpdateRequest {
 
-    private String firstName;
-    private String lastName;
+    private String fullname;
 
-    @Email(regexp = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", message = "{error.user.email.invalid}")
+    @Email(regexp = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", message = "EMAIL_INVALID")
     private String email;
 
-    @PhoneNumber(country = PhoneType.VIETNAMESE, message = "{error.user.phone.invalid}" )
-    private String phoneNumber;
-
-    private String address;
+    @PhoneNumber(country = PhoneType.VIETNAMESE, message = "PHONE_INVALID")
+    private String phone;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dOb;
+
+    private String address;
+
+    private Integer status;
+    private Integer role;
 }

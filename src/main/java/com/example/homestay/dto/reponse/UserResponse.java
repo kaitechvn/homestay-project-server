@@ -8,11 +8,14 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class UserResponse {
 
-    private String firstName;
-    private String lastName;
+    private Integer id;
+    private String username;
+    private String fullname;
     private String email;
-    private String phoneNumber;
+    private String phone;
     private String address;
-    private LocalDate dateOfBirth;
+    private LocalDate dob;
+    private Integer status;
+    private Integer role;
 
 }

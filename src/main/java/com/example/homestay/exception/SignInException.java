@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class SignInException extends AbstractApiException {
+public class SignInException extends ApiException {
 
     public SignInException(ErrorCode errorCode) {
         super(errorCode);

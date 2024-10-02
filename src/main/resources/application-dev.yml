@@ -18,23 +18,48 @@ spring:
     hibernate:
       ddl-auto: none
 ---
-open:
-  api:
-    title: API Backend Docs
-    version: v1.0.0
-    description: Meta API services
-    serverUrl: http://localhost:8080
-    serverName: development server
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+---
+file:
+  max-file-size: 2097152  # 1 * 1024 * 1024 1MB
 ---
 jwt:
   privateKey: classpath:private.pem
   publicKey: classpath:public.pem
   expiration:
     access-token: 8000
-    refresh-token: 8000
+    refresh-token: 10000
 ---
 logging:
   file:
     name: app.log
+---
+cors:
+  allowed:
+    origins: ${FRONT_END_URL:http://localhost:5173}
+---
+payment:
+  vnPay:
+    url: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
+    returnUrl: http://localhost:8080/api/payment/vnpay-callback
+    tmnCode: ZBJDDQ0C
+    secretKey: TJ5B7T897B41I38TO83G2Q2K0G7KRSAV
+    version: 2.1.0
+    command: pay
+    orderType: other
+---
+spring:
+  task:
+    scheduling:
+      pool: size=5
+---
+cron:
+  expression: "0 0 0 * * ?"
+
+
+
 
 

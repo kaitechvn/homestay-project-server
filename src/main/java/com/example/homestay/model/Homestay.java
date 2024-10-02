@@ -1,9 +1,9 @@
 package com.example.homestay.model;
 
+import com.example.homestay.enums.HomestayStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,27 +12,33 @@ import java.util.List;
 @Setter
 @Table(name = "homestay")
 public class Homestay extends AuditEntity{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false)
     private String name;
 
     @Column(length = 500)
     private String description;
 
-    private String type;
+    @Enumerated(EnumType.ORDINAL)
+    private HomestayStatus status;
 
-    @Column(nullable = false)
-    private Boolean status;
+    private Integer bedrooms;
+    private Integer bathrooms;
+    private String address;
 
     @OneToMany
-    @JoinColumn(name = "homestay_id")  // Foreign key in the Image table
+    @JoinColumn(name = "homestay_id")
     private List<Images> images = new ArrayList<>();
 
-    private Integer guest;
+    @ManyToOne
+    @JoinColumn(name = "district_id")
+    private District district;
 
+    private Integer guests;
+    private Integer price;
     private Double rating;
 
     @Column(name = "review_count")

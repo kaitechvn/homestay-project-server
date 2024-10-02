@@ -1,16 +1,28 @@
 package com.example.homestay.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Table(name = "images")
+@Table(name = "image")
+@Setter
+@Getter
+@NoArgsConstructor
 public class Images {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    @NotNull
+    @Column(name = "image_url")
     private String url;
+
+    @ManyToOne
+    @JoinColumn(name = "homestay_id")
+    @JsonIgnore
+    private Homestay homestay;
+
 }
