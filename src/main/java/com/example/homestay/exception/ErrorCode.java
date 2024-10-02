@@ -30,6 +30,9 @@ import lombok.Getter;
     // Booking
     BOOKING_NOT_FOUND("booking_not_found", "Booking not found"),
 
+    // Transaction
+    TRANSACTION_NOT_FOUND("transaction_not_found", "Transaction not found"),
+
     // JWT-Auth
     AUTHENTICATION_REQUIRED("unauthorized", "The Authentication header is missing, " +
                             "or is incorrectly specified, or is an invalid token"),

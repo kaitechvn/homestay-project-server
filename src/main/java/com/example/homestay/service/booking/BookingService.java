@@ -1,10 +1,10 @@
 package com.example.homestay.service.booking;
 
 import com.example.homestay.dto.reponse.BookingResponse;
+import com.example.homestay.dto.reponse.PagingResponse;
 import com.example.homestay.dto.request.BookingRequest;
-import com.example.homestay.model.Booking;
-
-import java.util.List;
+import com.example.homestay.dto.request.PagingRequest;
+import com.example.homestay.enums.BookingStatus;
 
 public interface BookingService {
 
@@ -16,14 +16,13 @@ public interface BookingService {
     // ADMIN, HOST
     void confirmBooking(Integer bookingId);
 
-    // Get a booking by its ID
-    Booking getBookingById(Integer bookingId);
-
     // Get all bookings for a specific user
-    List<Booking> getBookingsByUser(Integer userId);
+    PagingResponse<BookingResponse> listByUser(PagingRequest request, BookingStatus status);
 
-    // Update booking details for ADMIN
-    Booking updateBooking(Integer bookingId, Booking booking);
+    // Get all bookings for admin management
+    PagingResponse<BookingResponse> listByAdmin(PagingRequest request, BookingStatus status);
 
+    // Delete for ADMIN
+    void deleteBooking(Integer bookingId);
 
 }

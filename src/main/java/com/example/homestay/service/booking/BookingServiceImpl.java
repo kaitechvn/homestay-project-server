@@ -1,45 +1,92 @@
 package com.example.homestay.service.booking;
 
 import com.example.homestay.dto.reponse.BookingResponse;
+import com.example.homestay.dto.reponse.PagingResponse;
 import com.example.homestay.dto.request.BookingRequest;
+import com.example.homestay.dto.request.PagingRequest;
 import com.example.homestay.enums.BookingStatus;
 import com.example.homestay.exception.ErrorCode;
 import com.example.homestay.exception.NotFoundException;
 import com.example.homestay.mapper.BookingMapper;
-import com.example.homestay.model.Booking;
-import com.example.homestay.model.Homestay;
-import com.example.homestay.model.LockDate;
-import com.example.homestay.model.User;
-import com.example.homestay.repository.BookingRepository;
-import com.example.homestay.repository.HomestayRepository;
-import com.example.homestay.repository.LockDateRepository;
-import com.example.homestay.repository.UserRepository;
+import com.example.homestay.model.*;
+import com.example.homestay.repository.*;
+import com.example.homestay.utils.SecurityUtil;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class BookingServiceImpl implements BookingService {
-
     private final BookingRepository bookingRepository;
+
+    private final BookingMapper bookingMapper;
+    private final SecurityUtil securityUtil;
     private final UserRepository userRepository;
     private final HomestayRepository homestayRepository;
-    private final BookingMapper bookingMapper;
     private final LockDateRepository lockDateRepository;
+
+    @Override
+    public PagingResponse<BookingResponse> listByAdmin(PagingRequest pageRequest, BookingStatus status) {
+        Pageable pageable = PageRequest.of(pageRequest.getPage() - 1, pageRequest.getSize());
+
+        Page<Booking> pageResult;
+        if (status != null) {
+            // If status is provided, filter by it
+            pageResult = bookingRepository.findAllByStatus(pageable, status);
+        } else {
+            // If no status is provided, fetch all bookings
+            pageResult = bookingRepository.findAll(pageable);
+        }
+
+        return PagingResponse.from(
+                pageRequest.getPage(),
+                pageRequest.getSize(),
+                pageResult.getTotalElements(),
+                pageResult.stream()
+                        .map(bookingMapper::toBookingResponse)
+                        .toList());
+
+    }
+
+    @Override
+    public PagingResponse<BookingResponse> listByUser(PagingRequest pageRequest, BookingStatus status) {
+
+        Pageable pageable = PageRequest.of(pageRequest.getPage() - 1, pageRequest.getSize());
+
+        User user = securityUtil.getCurrentUser();
+
+        Page<Booking> pageResult;
+        if (status != null) {
+            // If status is provided, filter by it
+            pageResult = bookingRepository.findAllByUserAndStatus(pageable, user, status);
+        } else {
+            // If no status is provided, fetch all bookings
+            pageResult = bookingRepository.findAllByUser(pageable, user);
+        }
+
+        return PagingResponse.from(
+                pageRequest.getPage(),
+                pageRequest.getSize(),
+                pageResult.getTotalElements(),
+                pageResult.stream()
+                        .map(bookingMapper::toBookingResponse)
+                        .toList());
+
+    }
+
 
     @Override
     @Transactional
     public BookingResponse createBooking(BookingRequest bookingRequest) {
 
-        User user = getCurrentUser(bookingRequest);
+        User user = getCurrentUserForBooking(bookingRequest);
 
         // Fetch the Homestay based on homestayId from bookingRequest
         Homestay homestay = homestayRepository.findById(bookingRequest.getHomestayId())
@@ -60,6 +107,14 @@ public class BookingServiceImpl implements BookingService {
         Booking savedBooking = bookingRepository.save(booking);
 
         return bookingMapper.toBookingResponse(savedBooking);
+    }
+
+    @Override
+    public void deleteBooking(Integer bookingId) {
+        Booking booking = bookingRepository.findById(bookingId)
+                .orElseThrow(() -> new NotFoundException(ErrorCode.BOOKING_NOT_FOUND));
+
+        bookingRepository.delete(booking);
     }
 
     @Override
@@ -109,21 +164,6 @@ public class BookingServiceImpl implements BookingService {
         lockHomestayDates(booking);
     }
 
-    @Override
-    public Booking getBookingById(Integer bookingId) {
-        return null;
-    }
-
-    @Override
-    public List<Booking> getBookingsByUser(Integer userId) {
-        return List.of();
-    }
-
-    @Override
-    public Booking updateBooking(Integer bookingId, Booking booking) {
-        return null;
-    }
-
     // methods help main services
     private int calculateTotalAmount(BookingRequest bookingRequest, int homestayPrice) {
         long daysBetween = ChronoUnit.DAYS.between(bookingRequest.getCheckinDate(), bookingRequest.getCheckoutDate());
@@ -150,20 +190,15 @@ public class BookingServiceImpl implements BookingService {
         }
     }
 
-    private User getCurrentUser(BookingRequest bookingRequest) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String currentUsername = authentication.getName();
-
-        // Check if the current user is an ADMIN
-        if (authentication.getAuthorities().stream()
-                .anyMatch(grantedAuthority -> grantedAuthority.getAuthority().equals("ROLE_ADMIN"))) {
+    private User getCurrentUserForBooking(BookingRequest bookingRequest) {
+        // Check if the current user is ADMIN
+        if (securityUtil.isAdmin()) {
             // If the user is ADMIN, fetch the user by ID from the bookingRequest
             return userRepository.findById(bookingRequest.getUserId())
                     .orElseThrow(() -> new NotFoundException(ErrorCode.USER_NOT_FOUND));
         } else {
-            // If the user is not ADMIN, retrieve the user using the username from security context
-            return userRepository.findByUsername(currentUsername)
-                    .orElseThrow(() -> new NotFoundException(ErrorCode.USER_NOT_FOUND));
+            // If the user is a regular USER, retrieve the user from security context
+            return securityUtil.getCurrentUser();
         }
     }
 

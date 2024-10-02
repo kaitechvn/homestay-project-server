@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Table(name = "booking")
-public class Booking {
+public class Booking extends AuditEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -18,6 +18,14 @@ public class Booking {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    @Override
+    public String toString() {
+        return "Booking{id=" + id +
+                ", checkinDate=" + checkinDate +
+                ", checkoutDate=" + checkoutDate +
+                ", status=" + status.name() + "}";
+    }
 
     @ManyToOne
     @JoinColumn(name = "homestay_id")

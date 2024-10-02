@@ -16,7 +16,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
 ---
 spring:
   servlet:
@@ -44,12 +44,21 @@ cors:
 payment:
   vnPay:
     url: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
-    returnUrl: http://localhost:8080/api/payment/vn-pay-callback
-    tmnCode: JMEGBUDB
-    secretKey: 89Q7V4XP8PJDURBR4MX03YNL0K0C7CGD
+    returnUrl: http://localhost:8080/api/payment/vnpay-callback
+    tmnCode: ZBJDDQ0C
+    secretKey: TJ5B7T897B41I38TO83G2Q2K0G7KRSAV
     version: 2.1.0
     command: pay
     orderType: other
+---
+spring:
+  task:
+    scheduling:
+      pool: size=5
+---
+cron:
+  expression: "0 0 0 * * ?"
+
 
 
 
