@@ -125,4 +125,10 @@ public class HomestayController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/top-rated")
+    public ResponseEntity<List<HomestayResponse>> getTopRatedHomestays() {
+        List<HomestayResponse> topRatedHomestays = homestayService.getTopRatedHomestays();
+        return ResponseEntity.ok(topRatedHomestays);
+    }
+
 }

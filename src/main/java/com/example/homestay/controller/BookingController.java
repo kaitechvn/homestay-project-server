@@ -46,7 +46,6 @@ public class BookingController {
     @PostMapping
     public ResponseEntity<BookingResponse> create(@Valid @RequestBody BookingRequest bookingRequest) {
         BookingResponse booking = bookingService.createBooking(bookingRequest);
-
         return ResponseEntity.ok(booking);
     }
 
@@ -58,7 +57,6 @@ public class BookingController {
                 new ApiResponse<>("Booking confirmed successfully"));
     }
 
-    @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping("/{id}/cancel")
     public ResponseEntity<ApiResponse<?>> cancelBooking(@PathVariable Integer id) {
         bookingService.cancelBooking(id);

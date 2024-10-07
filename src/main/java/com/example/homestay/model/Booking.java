@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @Setter
 @Table(name = "booking")
 public class Booking extends AuditEntity{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -19,6 +20,23 @@ public class Booking extends AuditEntity{
     @JoinColumn(name = "user_id")
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "homestay_id")
+    private Homestay homestay;
+
+    private String contactName;
+    private String contactPhone;
+    private String contactEmail;
+    private LocalDate checkinDate;
+    private LocalDate checkoutDate;
+    private Integer guests;
+
+    @Enumerated(EnumType.STRING)
+    private BookingStatus status;
+
+    private Integer totalAmount;
+    private Boolean isReview;
+
     @Override
     public String toString() {
         return "Booking{id=" + id +
@@ -26,32 +44,5 @@ public class Booking extends AuditEntity{
                 ", checkoutDate=" + checkoutDate +
                 ", status=" + status.name() + "}";
     }
-
-    @ManyToOne
-    @JoinColumn(name = "homestay_id")
-    private Homestay homestay;
-
-    @Column(name = "contact_name")
-    private String contactName;
-
-    @Column(name = "contact_phone")
-    private String contactPhone;
-
-    @Column(name = "contact_email")
-    private String contactEmail;
-
-    @Column(name = "checkin_date")
-    private LocalDate checkinDate;
-
-    @Column(name = "checkout_date")
-    private LocalDate checkoutDate;
-
-    private Integer guests;
-
-    @Enumerated(EnumType.STRING)
-    private BookingStatus status;
-
-    @Column(name = "total_amount")
-    private Integer totalAmount;
 }
 

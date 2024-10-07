@@ -9,9 +9,11 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface BookingMapper {
 
-    @Mapping(target = "status", constant = "PENDING") // Default status
+    @Mapping(target = "status", constant = "PENDING")
     Booking toBooking(BookingRequest bookingRequest);
 
-    @Mapping(target = "bookingId", source = "booking.id") // Mapping for different names
+    @Mapping(target = "bookingId", source = "booking.id")
+    @Mapping(target = "homestayId", source = "booking.homestay.id")
+    @Mapping(target = "homestayName", source = "booking.homestay.name")
     BookingResponse toBookingResponse(Booking booking);
 }

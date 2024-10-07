@@ -17,5 +17,12 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .allowedOrigins(allowedOrigins)
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowedHeaders("*");
+
+        registry.addMapping("/payment/vnpay-callback")
+                .allowedOrigins("https://sandbox.vnpayment.vn")
+                .allowedMethods("GET")
+                .allowedHeaders("*");
     }
+
+
 }

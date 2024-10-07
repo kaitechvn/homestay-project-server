@@ -7,12 +7,13 @@ import com.example.homestay.service.payment.VNPayService;
 import com.example.homestay.utils.VNPayUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import java.io.IOException;
 
 @Log4j2
 @RestController
@@ -22,8 +23,10 @@ public class PaymentController {
 
     private final VNPayService vnPayService;
 
+    @PreAuthorize("@securityUtil.isBookingOwner(authentication.name, #bookingId)")
     @GetMapping("/vnpay")
-    public ResponseEntity<PaymentUrlResponse> payByVNPay(HttpServletRequest request,@RequestParam Integer bookingId) {
+    public ResponseEntity<PaymentUrlResponse> payByVNPay(HttpServletRequest request,
+                                                         @RequestParam Integer bookingId) {
         try {
             // Extract IP address from the request
             String ipAddress = VNPayUtil.getIpAddress(request);
@@ -41,15 +44,8 @@ public class PaymentController {
     }
 
     @GetMapping("/vnpay-callback")
-    public ResponseEntity<?> handleVNPayCallback(HttpServletRequest request, HttpServletResponse response) {
-
-        TransactionResponse transactionResponse = vnPayService.callBackHandler(request, response);
-
-        // Return the response based on the transaction status
-        if (transactionResponse.getStatus().equalsIgnoreCase("COMPLETED")) {
-            return ResponseEntity.ok(transactionResponse);
-        } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(transactionResponse);
-        }
+    public void handleVNPayCallback(HttpServletRequest request, HttpServletResponse response) throws  IOException {
+        vnPayService.callBackHandler(request, response);
     }
+
 }

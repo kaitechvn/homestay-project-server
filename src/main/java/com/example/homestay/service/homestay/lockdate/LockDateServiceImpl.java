@@ -33,7 +33,6 @@ public class LockDateServiceImpl implements LockDateService {
         }
     }
 
-
     @Override
     public void removeLockDates(Integer homestayId, List<LocalDate> dates) {
         // Iterate through the list of dates

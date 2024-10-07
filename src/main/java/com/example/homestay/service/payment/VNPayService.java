@@ -10,5 +10,5 @@ public interface VNPayService {
 
     PaymentUrlResponse createVnPayPayment(String ipAddress, long amount, String bankCode, Integer bookingId);
 
-    TransactionResponse callBackHandler(HttpServletRequest request, HttpServletResponse response);
+    void callBackHandler(HttpServletRequest request, HttpServletResponse response);
 }

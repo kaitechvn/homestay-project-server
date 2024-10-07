@@ -24,7 +24,6 @@ import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
 import org.springframework.security.web.SecurityFilterChain;
-
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 
@@ -38,7 +37,7 @@ public class SecurityConfig  {
 
     private final String[] PUBLIC_ENDPOINTS = {
              "/auth/**", "/swagger-ui/**", "/v3/api-docs/**", "/homestays/**",
-            "/payment/**"
+            "/payment/vnpay-callback", "/pdf/**"
     };
 
     private final RestAccessDeniedHandler restAccessDeniedHandler;
@@ -57,11 +56,9 @@ public class SecurityConfig  {
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))
                 .authorizeHttpRequests(request ->  request
-                                .requestMatchers(PUBLIC_ENDPOINTS).permitAll()
-//                                .requestMatchers("/admin/**").hasRole("ADMIN")
-//                                .requestMatchers("/user/**").hasAnyRole("ADMIN","USER")
+                        .requestMatchers("logo-bill.png").permitAll()
+                        .requestMatchers(PUBLIC_ENDPOINTS).permitAll()
                                 .anyRequest().authenticated())
-
 
                 .oauth2ResourceServer(cfg -> cfg
                         .authenticationEntryPoint(restAuthenticationEntryPoint)

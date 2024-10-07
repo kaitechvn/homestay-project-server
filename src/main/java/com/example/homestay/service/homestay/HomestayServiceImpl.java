@@ -19,6 +19,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.example.homestay.exception.ErrorCode.HOMESTAY_NOT_FOUND;
 
@@ -103,10 +106,8 @@ public class HomestayServiceImpl implements HomestayService {
 
         Pageable pageable = PageRequest.of(pageRequest.getPage() - 1, pageRequest.getSize());
 
-        // Use Specification (or QueryDSL or Native Query) for dynamic filtering
         Specification<Homestay> spec = HomestaySpecification.byFilters(districtId, minPrice, maxPrice, guests, checkIn, checkOut);
 
-        // Fetch filtered results
         Page<Homestay> pageResult = homestayRepository.findAll(spec, pageable);
 
         // Map results to response
@@ -118,6 +119,19 @@ public class HomestayServiceImpl implements HomestayService {
                         .map(homestayMapper::toHomestayResponse)
                         .toList()
         );
+    }
+
+    public List<HomestayResponse> getTopRatedHomestays() {
+        List<Homestay> homestays = homestayRepository.findAll();
+
+        return homestays.stream()
+                .sorted(Comparator.comparingDouble(Homestay::getRating)
+                        .reversed()
+                        .thenComparing(Homestay::getReviewCount, Comparator.reverseOrder()))
+                .map(homestayMapper::toHomestayResponse)
+                .collect(Collectors.toList());
+
+
     }
 
 }

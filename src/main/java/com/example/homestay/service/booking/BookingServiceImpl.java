@@ -5,6 +5,7 @@ import com.example.homestay.dto.reponse.PagingResponse;
 import com.example.homestay.dto.request.BookingRequest;
 import com.example.homestay.dto.request.PagingRequest;
 import com.example.homestay.enums.BookingStatus;
+import com.example.homestay.exception.DateConflictException;
 import com.example.homestay.exception.ErrorCode;
 import com.example.homestay.exception.NotFoundException;
 import com.example.homestay.mapper.BookingMapper;
@@ -19,6 +20,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 
 @Service
@@ -81,7 +84,6 @@ public class BookingServiceImpl implements BookingService {
 
     }
 
-
     @Override
     @Transactional
     public BookingResponse createBooking(BookingRequest bookingRequest) {
@@ -110,14 +112,6 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public void deleteBooking(Integer bookingId) {
-        Booking booking = bookingRepository.findById(bookingId)
-                .orElseThrow(() -> new NotFoundException(ErrorCode.BOOKING_NOT_FOUND));
-
-        bookingRepository.delete(booking);
-    }
-
-    @Override
     @Transactional
     public void cancelBooking(Integer bookingId) {
         Booking booking = bookingRepository.findById(bookingId)
@@ -129,14 +123,19 @@ public class BookingServiceImpl implements BookingService {
         }
 
         // Check if the booking is already confirmed or completed
-        if (booking.getStatus() == BookingStatus.CONFIRMED || booking.getStatus() == BookingStatus.COMPLETED) {
-            throw new IllegalStateException("Booking cannot be canceled because it is already confirmed or completed.");
+        if (booking.getStatus() == BookingStatus.CONFIRMED) {
+            throw new IllegalStateException("Booking cannot be canceled because it is already confirmed ");
         }
 
-        // Check if cancellation is within the allowed time frame (e.g., 24 hours before check-in)
-        LocalDateTime now = LocalDateTime.now();
-        LocalDateTime checkinTime = booking.getCheckinDate().atStartOfDay(); // Adjust as necessary
+        ZonedDateTime now = ZonedDateTime.now(ZoneId.of("Asia/Ho_Chi_Minh"));
+        System.out.println(now);
+        ZonedDateTime checkinTime = booking.getCheckinDate().atStartOfDay(ZoneId.of("Asia/Ho_Chi_Minh"));
+        System.out.println(checkinTime);
         long hoursUntilCheckin = ChronoUnit.HOURS.between(now, checkinTime);
+
+        if (hoursUntilCheckin < 0) {
+            throw new IllegalStateException("Check-in date has already passed.");
+        }
 
         if (hoursUntilCheckin < 24) {
             throw new IllegalStateException("Booking cannot be canceled within 24 hours of check-in.");
@@ -153,9 +152,19 @@ public class BookingServiceImpl implements BookingService {
         Booking booking = bookingRepository.findById(bookingId)
                 .orElseThrow(() -> new NotFoundException(ErrorCode.BOOKING_NOT_FOUND));
 
-        // Check current status to prevent re-confirmation
         if (booking.getStatus() != BookingStatus.PENDING) {
             throw new IllegalStateException("Booking cannot be confirmed in its current state.");
+        }
+
+        // Check if any date between checkinDate and checkoutDate is locked
+        boolean hasDateConflict = lockDateRepository.existsByHomestayIdAndLockDateBetween(
+                booking.getHomestay().getId(),
+                booking.getCheckinDate(),
+                booking.getCheckoutDate()
+        );
+
+        if (hasDateConflict) {
+            throw new DateConflictException("Booking dates conflict with existing locked dates.");
         }
 
         booking.setStatus(BookingStatus.CONFIRMED);

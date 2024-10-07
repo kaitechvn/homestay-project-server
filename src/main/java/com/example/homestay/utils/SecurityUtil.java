@@ -1,11 +1,15 @@
 package com.example.homestay.utils;
 
+import com.example.homestay.model.Booking;
 import com.example.homestay.model.User;
+import com.example.homestay.repository.BookingRepository;
 import com.example.homestay.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
+
+import java.util.Optional;
 
 @Component
 public class SecurityUtil {
@@ -13,12 +17,21 @@ public class SecurityUtil {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private BookingRepository bookingRepository;
+
     public boolean isUserOwner(String username, Integer id) {
         User user = userRepository.findById(id).orElse(null);
 
-        // If the user exists and the authenticated user's name matches, return true
         return user != null && user.getUsername().equals(username);
     }
+
+    public boolean isBookingOwner(String username, Integer bookingId) {
+        Optional<Booking> booking = bookingRepository.findById(bookingId);
+
+        return booking.map(value -> value.getUser().getUsername().equals(username)).orElse(false);
+    }
+
 
     public boolean isUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

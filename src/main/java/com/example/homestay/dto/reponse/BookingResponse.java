@@ -13,9 +13,12 @@ public class BookingResponse {
     private String contactName;
     private String contactPhone;
     private String contactEmail;
+    private Integer homestayId;
+    private String homestayName;
     private LocalDate checkinDate;
     private LocalDate checkoutDate;
     private Integer guests;
     private String status;
     private Integer totalAmount;
+
 }

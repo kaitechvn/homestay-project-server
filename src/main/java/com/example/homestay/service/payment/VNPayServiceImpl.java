@@ -2,10 +2,9 @@ package com.example.homestay.service.payment;
 
 import com.example.homestay.config.payment.VNPAYConfig;
 import com.example.homestay.dto.reponse.PaymentUrlResponse;
-import com.example.homestay.dto.reponse.TransactionResponse;
-import com.example.homestay.enums.BookingStatus;
 import com.example.homestay.enums.PaymentChannel;
 import com.example.homestay.enums.TransactionStatus;
+import com.example.homestay.exception.DateConflictException;
 import com.example.homestay.exception.ErrorCode;
 import com.example.homestay.exception.NotFoundException;
 import com.example.homestay.mapper.TransactionMapper;
@@ -20,6 +19,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
+
+import java.io.IOException;
 import java.util.Map;
 
 @Log4j2
@@ -30,7 +31,6 @@ public class VNPayServiceImpl implements VNPayService {
     private final BookingRepository bookingRepository;
     private final TransactionRepository transactionRepository;
     private final VNPAYConfig vnpayConfig;
-    private final TransactionMapper transactionMapper;
     private final BookingService bookingService;
 
     public PaymentUrlResponse createVnPayPayment(String ipAddress, long amount, String bankCode, Integer bookingId ) {
@@ -75,10 +75,10 @@ public class VNPayServiceImpl implements VNPayService {
     }
 
     @Override
-    public TransactionResponse callBackHandler(HttpServletRequest request, HttpServletResponse response) {
+    public void callBackHandler(HttpServletRequest request, HttpServletResponse response) {
+        String redirectUrl;
         log.info("VNPay callback received. Handling transaction...");
 
-        // Get the transaction reference (billNo) from the callback request
         String billNo = request.getParameter("vnp_TxnRef");
         String transNo = request.getParameter("vnp_TransactionNo");
         String method = request.getParameter("vnp_BankCode");
@@ -98,18 +98,48 @@ public class VNPayServiceImpl implements VNPayService {
                 .orElseThrow(() -> new NotFoundException(ErrorCode.BOOKING_NOT_FOUND));
 
         if (status.equals("00")) {
-            transaction.setStatus(TransactionStatus.COMPLETED);
-            bookingService.confirmBooking(bookingReturn.getId());
-            transactionRepository.save(transaction);
-            log.info("Transaction completed successfully with ID: {}", transaction.getId());
-        }
-        else {
+            try {
+
+                transaction.setStatus(TransactionStatus.COMPLETED);
+                bookingService.confirmBooking(bookingReturn.getId());
+
+                // Save the transaction after booking confirmation
+                transactionRepository.save(transaction);
+                log.info("Transaction completed successfully with ID: {}", transaction.getId());
+                redirectUrl = "http://localhost:5173/booking-success";
+
+            } catch (DateConflictException e) {
+
+                transaction.setStatus(TransactionStatus.FAILED);
+                transactionRepository.save(transaction);
+
+                // Cancel the booking
+                bookingService.cancelBooking(bookingReturn.getId());
+
+                // Log the error
+                log.error("Failed to confirm booking with ID: {}. Transaction set to FAILED. Error: {}",
+                        bookingReturn.getId(), e.getMessage());
+
+                redirectUrl = "http://localhost:5173/payment-failed?bookingId=" +
+                        bookingReturn.getId();
+            }
+
+        } else {
             transaction.setStatus(TransactionStatus.FAILED);
             transactionRepository.save(transaction);
+
+            redirectUrl = "http://localhost:5173/payment-failed?bookingId=" +
+                    bookingReturn.getId();
+
             log.error("Transaction failed with status code: {}", status);
         }
 
-        return transactionMapper.toTransactionResponse(transaction);
+
+        try {
+            response.sendRedirect(redirectUrl);
+        } catch (IOException ioException) {
+            log.error("Failed to redirect: {}", ioException.getMessage());
+        }
     }
  }
 

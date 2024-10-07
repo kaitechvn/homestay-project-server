@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+
+    <title>Homestay Booking Bill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            border-bottom: 2px solid #333;
+            margin-left: 20px;
+        }
+                .logo {
+            max-width: 450px;
+            height: auto;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        .details {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .details p {
+            margin: 10px 0;
+        }
+        .details strong {
+            color: #333;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .content {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .inline-dates {
+            display: flex;
+            justify-content: flex-start;
+            margin: 10px 0;
+        }
+        .inline-dates p {
+            margin-right: 400px;
+        }
+    </style>
+</head>
+<body>
+<h1>VMO Homestay</h1>
+
+<h2>Booking Invoice</h2>
+<div class="content">
+    <div class="details">
+        <p><strong>Booking ID:</strong> <span th:text="${bookingId}"></span></p>
+        <p><strong>Homestay Name:</strong> <span th:text="${homestayName}"></span></p>
+        <p><strong>Guest Name:</strong> <span th:text="${contactName}"></span></p>
+        <p><strong>Phone:</strong> <span th:text="${contactPhone}"></span></p>
+        <p><strong>Email:</strong> <span th:text="${contactEmail}"></span></p>
+
+        <div class="inline-dates">
+            <p><strong>Check-in Date:</strong> <span th:text="${checkInDate}"></span></p>
+            <p><strong>Check-out Date:</strong> <span th:text="${checkOutDate}"></span></p>
+        </div>
+
+        <p><strong>Number of Guests:</strong> <span th:text="${numberOfGuests}"></span></p>
+        <p><strong>Price per Night:</strong> <span th:text="${pricePerNight}"></span></p>
+        <p><strong>Total Nights:</strong> <span th:text="${totalNights}"></span></p>
+        <p><strong>Total Amount:</strong> <span th:text="${totalAmount}"></span></p>
+    </div>
+</div>
+
+<div class="footer">
+    <p><em>Thank you for booking with us!</em></p>
+</div>
+</body>
+</html>

@@ -5,8 +5,10 @@ import com.example.homestay.dto.reponse.PagingResponse;
 import com.example.homestay.dto.request.HomestayRequest;
 import com.example.homestay.dto.request.HomestayUpdateRequest;
 import com.example.homestay.dto.request.PagingRequest;
+import com.example.homestay.model.Homestay;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 public interface HomestayService {
@@ -31,6 +33,8 @@ public interface HomestayService {
                                         LocalDate checkIn,
                                         LocalDate checkOut
     );
+
+    List<HomestayResponse> getTopRatedHomestays();
 
 }
 

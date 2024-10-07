@@ -39,7 +39,7 @@ logging:
 ---
 cors:
   allowed:
-    origins: ${FRONT_END_URL:http://localhost:5173}
+    origins: http://localhost:5173
 ---
 payment:
   vnPay:
@@ -50,11 +50,6 @@ payment:
     version: 2.1.0
     command: pay
     orderType: other
----
-spring:
-  task:
-    scheduling:
-      pool: size=5
 ---
 cron:
   expression: "0 0 0 * * ?"

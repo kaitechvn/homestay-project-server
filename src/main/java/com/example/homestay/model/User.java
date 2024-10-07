@@ -26,15 +26,10 @@
         private Integer id;
 
         private String username;
-
         private String password;
-
         private String fullname;
-
         private String email;
-
         private String phone;
-
         private String address;
 
         @Column(name = "date_of_birth")
@@ -42,10 +37,6 @@
 
         @Enumerated(EnumType.ORDINAL)
         private UserStatus status;
-
-//        @ManyToOne
-//        @JoinColumn(name = "district_id")
-//        private District district;
 
         @ManyToOne
         @JoinColumn(name = "role_id")

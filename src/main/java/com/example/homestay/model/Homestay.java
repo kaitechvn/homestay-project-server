@@ -40,8 +40,6 @@ public class Homestay extends AuditEntity{
     private Integer guests;
     private Integer price;
     private Double rating;
-
-    @Column(name = "review_count")
-    private int reviewCount;
+    private Integer reviewCount;
 
 }

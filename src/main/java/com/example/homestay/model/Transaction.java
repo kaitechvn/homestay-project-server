@@ -25,25 +25,21 @@ public class Transaction {
     @JoinColumn(name = "booking_id")
     private Booking booking;
 
-    @Column(name = "trans_no")
     private String transNo;
 
     @Column(name = "payment_method")
     private String method;
 
-    @Enumerated(EnumType.STRING)  // Use Enum for transaction statuses
+    @Enumerated(EnumType.STRING)
     private PaymentChannel channel;
 
-    @Enumerated(EnumType.STRING)  // Use Enum for transaction statuses
+    @Enumerated(EnumType.STRING)
     private TransactionStatus status;
 
     private Integer amount;
-
-    @Column(name = "bill_no")
     private String billNo;
 
     @CreationTimestamp
-    @Column(name = "created_date")
     private LocalDate createDate;
 
 }

@@ -22,7 +22,4 @@ public interface BookingService {
     // Get all bookings for admin management
     PagingResponse<BookingResponse> listByAdmin(PagingRequest request, BookingStatus status);
 
-    // Delete for ADMIN
-    void deleteBooking(Integer bookingId);
-
 }
