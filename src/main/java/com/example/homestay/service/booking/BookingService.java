@@ -22,4 +22,5 @@ public interface BookingService {
     // Get all bookings for admin management
     PagingResponse<BookingResponse> listByAdmin(PagingRequest request, BookingStatus status);
 
+    BookingResponse getBooking(Integer bookingId);
 }

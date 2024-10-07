@@ -28,7 +28,7 @@ public class PaymentController {
     public ResponseEntity<PaymentUrlResponse> payByVNPay(HttpServletRequest request,
                                                          @RequestParam Integer bookingId) {
         try {
-            // Extract IP address from the request
+
             String ipAddress = VNPayUtil.getIpAddress(request);
             long amount = Long.parseLong(request.getParameter("amount")) * 100L;
             String bankCode = request.getParameter("bankCode");

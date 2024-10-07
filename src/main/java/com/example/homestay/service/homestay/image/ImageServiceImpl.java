@@ -35,38 +35,30 @@ public class ImageServiceImpl implements ImageService {
 
         for (MultipartFile file : files) {
             try {
-                // Validate file
+
                 if (file.isEmpty()) {
                     throw new IllegalArgumentException("File is empty: " + file.getOriginalFilename());
                 }
 
                 if (file.getSize() > maxFileSize) {
-                    throw new ImageSizeException(ErrorCode.IMAGE_SIZE_EXCEED,
-                            file.getOriginalFilename(),
-                            maxFileSize,
-                            file.getSize());
+                    continue;
                 }
 
-                // Save file to the specified directory
                 Path targetStaticDir = Paths.get("target/classes/static/homestays", String.valueOf(homestay.getId()));
                 Path resourcesStaticDir = Paths.get("src/main/resources/static/homestays", String.valueOf(homestay.getId()));
 
-                // Create directories if they do not exist in target/classes/static/homestays
                 if (!Files.exists(targetStaticDir)) {
                     Files.createDirectories(targetStaticDir);
                 }
 
-                // Create directories if they do not exist in src/main/resources/static/homestays
                 if (!Files.exists(resourcesStaticDir)) {
                     Files.createDirectories(resourcesStaticDir);
                 }
 
-                // Save file to the specified directory (target/classes/static/homestays/{homestayId})
                 String fileName = Objects.requireNonNull(file.getOriginalFilename());
                 Path targetFilePath = targetStaticDir.resolve(fileName);
                 Files.copy(file.getInputStream(), targetFilePath, StandardCopyOption.REPLACE_EXISTING);
 
-// Save file to the specified directory (src/main/resources/static/homestays/{homestayId})
                 Path resourcesFilePath = resourcesStaticDir.resolve(fileName);
                 Files.copy(file.getInputStream(), resourcesFilePath, StandardCopyOption.REPLACE_EXISTING);
 

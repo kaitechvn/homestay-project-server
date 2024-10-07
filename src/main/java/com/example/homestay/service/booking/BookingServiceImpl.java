@@ -17,12 +17,14 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
+import java.util.Comparator;
 
 @Service
 @RequiredArgsConstructor
@@ -41,10 +43,8 @@ public class BookingServiceImpl implements BookingService {
 
         Page<Booking> pageResult;
         if (status != null) {
-            // If status is provided, filter by it
             pageResult = bookingRepository.findAllByStatus(pageable, status);
         } else {
-            // If no status is provided, fetch all bookings
             pageResult = bookingRepository.findAll(pageable);
         }
 
@@ -53,24 +53,34 @@ public class BookingServiceImpl implements BookingService {
                 pageRequest.getSize(),
                 pageResult.getTotalElements(),
                 pageResult.stream()
+                        .sorted(Comparator.comparing(Booking::getCreatedAt).reversed())
                         .map(bookingMapper::toBookingResponse)
                         .toList());
 
     }
 
+    @PreAuthorize("@securityUtil.isBookingOwner(authentication.name, #bookingId)")
+    @Override
+    public BookingResponse getBooking(Integer bookingId) {
+        Booking booking = bookingRepository.findById(bookingId)
+                .orElseThrow(() -> new NotFoundException(ErrorCode.BOOKING_NOT_FOUND));
+
+        return bookingMapper.toBookingResponse(booking);
+    }
+
     @Override
     public PagingResponse<BookingResponse> listByUser(PagingRequest pageRequest, BookingStatus status) {
 
-        Pageable pageable = PageRequest.of(pageRequest.getPage() - 1, pageRequest.getSize());
+        Pageable pageable = PageRequest.of(pageRequest.getPage() - 1,
+                                            pageRequest.getSize(),
+                                            Sort.by("createdAt").descending());
 
         User user = securityUtil.getCurrentUser();
 
         Page<Booking> pageResult;
         if (status != null) {
-            // If status is provided, filter by it
             pageResult = bookingRepository.findAllByUserAndStatus(pageable, user, status);
         } else {
-            // If no status is provided, fetch all bookings
             pageResult = bookingRepository.findAllByUser(pageable, user);
         }
 
@@ -90,22 +100,27 @@ public class BookingServiceImpl implements BookingService {
 
         User user = getCurrentUserForBooking(bookingRequest);
 
-        // Fetch the Homestay based on homestayId from bookingRequest
         Homestay homestay = homestayRepository.findById(bookingRequest.getHomestayId())
                 .orElseThrow(() -> new NotFoundException(ErrorCode.HOMESTAY_NOT_FOUND));
 
-        // Map BookingRequest to Booking entity
+        boolean hasDateConflict = lockDateRepository.existsByHomestayIdAndLockDateBetween(
+                homestay.getId(),
+                bookingRequest.getCheckinDate(),
+                bookingRequest.getCheckoutDate()
+        );
+
+        if (hasDateConflict) {
+            throw new DateConflictException("Booking dates conflict with existing locked dates.");
+        }
+
         Booking booking = bookingMapper.toBooking(bookingRequest);
 
-        // Calculate total amount and set it
         int totalAmount = calculateTotalAmount(bookingRequest, homestay.getPrice());
         booking.setTotalAmount(totalAmount);
 
-        // Set user and homestay in the Booking entity
         booking.setUser(user);
         booking.setHomestay(homestay);
 
-        // Save the booking
         Booking savedBooking = bookingRepository.save(booking);
 
         return bookingMapper.toBookingResponse(savedBooking);
@@ -117,12 +132,10 @@ public class BookingServiceImpl implements BookingService {
         Booking booking = bookingRepository.findById(bookingId)
                 .orElseThrow(() -> new NotFoundException(ErrorCode.BOOKING_NOT_FOUND));
 
-        // Check current status to prevent re-cancellation
         if (booking.getStatus() == BookingStatus.CANCELLED) {
             throw new IllegalStateException("Booking is already canceled.");
         }
 
-        // Check if the booking is already confirmed or completed
         if (booking.getStatus() == BookingStatus.CONFIRMED) {
             throw new IllegalStateException("Booking cannot be canceled because it is already confirmed ");
         }
@@ -156,7 +169,6 @@ public class BookingServiceImpl implements BookingService {
             throw new IllegalStateException("Booking cannot be confirmed in its current state.");
         }
 
-        // Check if any date between checkinDate and checkoutDate is locked
         boolean hasDateConflict = lockDateRepository.existsByHomestayIdAndLockDateBetween(
                 booking.getHomestay().getId(),
                 booking.getCheckinDate(),

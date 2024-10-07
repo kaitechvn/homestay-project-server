@@ -40,6 +40,6 @@ public class Transaction {
     private String billNo;
 
     @CreationTimestamp
-    private LocalDate createDate;
+    private LocalDate createdDate;
 
 }

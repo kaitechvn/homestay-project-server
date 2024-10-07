@@ -1,40 +1,36 @@
 package com.example.homestay.service.pdf;
 
-
+import com.example.homestay.dto.reponse.BookingResponse;
+import com.example.homestay.service.booking.BookingService;
 import com.lowagie.text.DocumentException;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring6.SpringTemplateEngine;
 import org.xhtmlrenderer.pdf.ITextRenderer;
-
 import java.io.IOException;
 import java.io.OutputStream;
 
 @Service
+@RequiredArgsConstructor
 public class PdfServiceImpl implements PdfService{
 
-    @Autowired
-    private SpringTemplateEngine templateEngine;
+    private final SpringTemplateEngine templateEngine;
+    private final BookingService bookingService;
 
     @Override
     public void generateBillPdf(Integer bookingId, HttpServletResponse response) throws IOException {
 
         response.setContentType("application/pdf");
-        response.setHeader("Content-Disposition", "attachment; filename=bill.pdf");
 
-        // Generate HTML content from Thymeleaf template
         String htmlContent = generateHtml(bookingId);
 
-        // Create a PDF renderer
         ITextRenderer renderer = new ITextRenderer();
 
-        // Set the content to the renderer
         renderer.setDocumentFromString(htmlContent);
         renderer.layout();
 
-        // Write the PDF to the response output stream
         try (OutputStream os = response.getOutputStream()) {
             renderer.createPDF(os);
         } catch (DocumentException e) {
@@ -43,9 +39,9 @@ public class PdfServiceImpl implements PdfService{
     }
 
     private String generateHtml(Integer bookingId) {
-        // Create a context and set the variables
+        BookingResponse bookingResponse = bookingService.getBooking(bookingId);
         Context context = new Context();
-        context.setVariable("bookingId", bookingId);
+        context.setVariable("booking", bookingResponse);
         return templateEngine.process("bill", context);
     }
 

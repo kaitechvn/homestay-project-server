@@ -128,8 +128,9 @@ public class VNPayServiceImpl implements VNPayService {
             transaction.setStatus(TransactionStatus.FAILED);
             transactionRepository.save(transaction);
 
-            redirectUrl = "http://localhost:5173/payment-failed?bookingId=" +
-                    bookingReturn.getId();
+            redirectUrl = "http://localhost:5173/payment-failed?" +
+                    "bookingId=" + bookingReturn.getId() +
+                    "&amount=" + bookingReturn.getTotalAmount();
 
             log.error("Transaction failed with status code: {}", status);
         }
