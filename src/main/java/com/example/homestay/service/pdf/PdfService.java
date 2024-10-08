@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public interface PdfService {
 
-    void generateBillPdf(Integer bookingId, HttpServletResponse response) throws IOException;
+    void generateBillPdf(Integer bookingId, String lang, HttpServletResponse response) throws IOException;
 
 
 }

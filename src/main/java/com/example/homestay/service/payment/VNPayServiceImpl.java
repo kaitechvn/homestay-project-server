@@ -39,6 +39,7 @@ public class VNPayServiceImpl implements VNPayService {
         String billNo = VNPayUtil.getRandomNumber(8);
 
         Map<String, String> vnpParamsMap = vnpayConfig.getVNPayConfig();
+
         vnpParamsMap.put("vnp_Amount", String.valueOf(amount));
 
         // Choose bank code - if Empty -> Choose in VnPay page

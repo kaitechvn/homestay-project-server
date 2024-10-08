@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+
+  <title>Hóa đơn đặt phòng Homestay</title>
+  <style>
+    @font-face {
+            font-family: 'Roboto';
+            src: url('D:\\Project\\Homestay-Backend\\src\\main\\resources\\fonts\\Roboto-Regular.ttf') format('truetype');
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+     h1 {
+         color: #333;
+         text-align: center;
+         border-bottom: 2px solid #333;
+         margin-left: 20px;
+     }
+     .logo {
+         max-width: 450px;
+         height: auto;
+     }
+     .content {
+         margin-top: 20px;
+     }
+
+     .details {
+         border: 1px solid #ddd;
+         padding: 20px;
+         margin-top: 10px;
+     }
+     .details p {
+         margin: 10px 0;
+     }
+     .details strong {
+         color: #333;
+     }
+     .footer {
+         margin-top: 20px;
+         text-align: center;
+         font-style: italic;
+     }
+
+     .content {
+         border: 1px solid #ddd;
+         padding: 10px;
+         border-radius: 5px;
+         background-color: #fff;
+     }
+
+  </style>
+</head>
+<body>
+<h1>VMO Homestay</h1>
+
+<h2>Hóa đơn đặt phòng</h2>
+<div class="content">
+  <div class="details">
+    <p><strong>Mã đặt phòng:</strong> <span th:text="${booking.bookingId}"></span></p>
+    <p><strong>Tên homestay:</strong> <span th:text="${booking.homestayName}"></span></p>
+    <p><strong>Tên khách hàng:</strong> <span th:text="${booking.contactName}"></span></p>
+    <p><strong>Số điện thoại:</strong> <span th:text="${booking.contactPhone}"></span></p>
+    <p><strong>Email:</strong> <span th:text="${booking.contactEmail}"></span></p>
+
+    <div>
+      <table style="width: 100%;">
+        <tr>
+          <td><strong>Ngày nhận phòng:</strong> <span th:text="${booking.checkinDate}"></span></td>
+          <td style="text-align: right;"><strong>Ngày trả phòng:</strong> <span th:text="${booking.checkoutDate}"></span></td>
+        </tr>
+      </table>
+    </div>
+
+    <p><strong>Số lượng khách:</strong> <span th:text="${booking.guests}"></span></p>
+    <p><strong>Trạng thái:</strong>
+      <span th:if="${booking.status == 'CONFIRMED'}">Đã xác nhận</span>
+      <span th:if="${booking.status == 'PENDING'}">Đang chờ xác nhận</span>
+      <span th:if="${booking.status == 'CANCELLED'}">Đã hủy</span>
+    </p>
+    <p><strong>Tổng tiền:</strong> <span th:text="${booking.totalAmount}"></span></p>
+  </div>
+</div>
+
+<div class="footer">
+  <p><em>Cảm ơn bạn đã đặt phòng từ dịch vụ chúng tôi!</em></p>
+</div>
+</body>
+</html>

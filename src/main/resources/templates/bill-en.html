@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+
+    <title>Homestay Booking Bill</title>
+    <style>
+
+       body {
+           font-family: 'Roboto', sans-serif;
+           margin: 20px;
+           background-color: #f9f9f9;
+       }
+       h1 {
+           color: #333;
+           text-align: center;
+           border-bottom: 2px solid #333;
+           margin-left: 20px;
+       }
+               .logo {
+           max-width: 450px;
+           height: auto;
+       }
+       .content {
+           margin-top: 20px;
+       }
+
+       .details {
+           border: 1px solid #ddd;
+           padding: 20px;
+           margin-top: 10px;
+       }
+       .details p {
+           margin: 10px 0;
+       }
+       .details strong {
+           color: #333;
+       }
+       .footer {
+           margin-top: 20px;
+           text-align: center;
+           font-style: italic;
+       }
+
+       .content {
+           border: 1px solid #ddd;
+           padding: 10px;
+           border-radius: 5px;
+           background-color: #fff;
+       }
+
+    </style>
+</head>
+<body >
+<h1>VMO Homestay</h1>
+
+<h2>Booking Invoice</h2>
+<div class="content">
+    <div class="details">
+        <p><strong>Booking ID:</strong> <span th:text="${booking.bookingId}"></span></p>
+        <p><strong>Homestay Name:</strong> <span th:text="${booking.homestayName}"></span></p>
+        <p><strong>Guest Name:</strong> <span th:text="${booking.contactName}"></span></p>
+        <p><strong>Phone:</strong> <span th:text="${booking.contactPhone}"></span></p>
+        <p><strong>Email:</strong> <span th:text="${booking.contactEmail}"></span></p>
+
+        <div>
+            <table style="width: 100%;">
+                <tr>
+                    <td><strong>Check-in:</strong> <span th:text="${booking.checkinDate}"></span></td>
+                    <td style="text-align: right;"><strong>Check-out:</strong> <span th:text="${booking.checkoutDate}"></span></td>
+                </tr>
+            </table>
+        </div>
+
+        <p><strong>Number of Guests:</strong> <span th:text="${booking.guests}"></span></p>
+        <p><strong>Status:</strong> <span th:text="${booking.status}"></span></p>
+        <p><strong>Total Amount:</strong> <span th:text="${booking.totalAmount}"></span></p>
+    </div>
+</div>
+
+<div class="footer">
+    <p><em>Thank you for booking with us!</em></p>
+</div>
+</body>
+</html>

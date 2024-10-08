@@ -15,8 +15,10 @@ public class PdfController {
     private PdfService pdfService;
 
     @GetMapping("/bill/{bookingId}")
-    public void generatePdf(@PathVariable Integer bookingId, HttpServletResponse response) throws IOException {
+    public void generatePdf(@PathVariable Integer bookingId,
+                            @RequestParam String lang,
+                            HttpServletResponse response) throws IOException {
         // Call the service to generate the PDF
-        pdfService.generateBillPdf(bookingId, response);
+        pdfService.generateBillPdf(bookingId, lang, response);
     }
 }
