@@ -880,3 +880,33 @@ java.lang.IllegalArgumentException: Invalid character found in the request targe
 2024-10-08T14:13:58.352+07:00  INFO 26316 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-10-08T14:13:58.354+07:00  INFO 26316 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-10-08T14:13:58.363+07:00  INFO 26316 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T14:14:00.611+07:00  INFO 14408 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 14408 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T14:14:00.614+07:00  INFO 14408 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T14:14:01.678+07:00  INFO 14408 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T14:14:01.803+07:00  INFO 14408 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 116 ms. Found 8 JPA repository interfaces.
+2024-10-08T14:14:02.550+07:00  INFO 14408 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T14:14:02.564+07:00  INFO 14408 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T14:14:02.564+07:00  INFO 14408 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T14:14:02.649+07:00  INFO 14408 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T14:14:02.650+07:00  INFO 14408 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1984 ms
+2024-10-08T14:14:02.862+07:00  INFO 14408 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T14:14:02.916+07:00  INFO 14408 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T14:14:02.950+07:00  INFO 14408 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T14:14:03.349+07:00  INFO 14408 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T14:14:03.379+07:00  INFO 14408 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T14:14:03.636+07:00  INFO 14408 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@25823192
+2024-10-08T14:14:03.637+07:00  INFO 14408 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T14:14:04.866+07:00  INFO 14408 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T14:14:04.868+07:00  INFO 14408 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T14:14:05.539+07:00  INFO 14408 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T14:14:06.230+07:00  WARN 14408 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T14:14:06.257+07:00  INFO 14408 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T14:14:07.522+07:00  INFO 14408 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T14:14:07.534+07:00  INFO 14408 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 7.442 seconds (process running for 7.85)
+2024-10-08T14:14:17.205+07:00  INFO 14408 --- [spring-boot] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T14:14:17.205+07:00  INFO 14408 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T14:14:17.205+07:00  INFO 14408 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-10-08T14:28:56.740+07:00  INFO 14408 --- [spring-boot] [http-nio-8080-exec-7] c.e.homestay.security.CustomAuthDao      : loading user by username: khai22
+2024-10-08T14:37:16.582+07:00  INFO 14408 --- [spring-boot] [http-nio-8080-exec-3] c.e.h.service.payment.VNPayServiceImpl   : Starting VnPay payment creation process...
+2024-10-08T14:37:16.586+07:00  INFO 14408 --- [spring-boot] [http-nio-8080-exec-3] c.e.h.service.payment.VNPayServiceImpl   : Generated VNPay payment URL: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=400000000&vnp_Command=pay&vnp_CreateDate=20241008143716&vnp_CurrCode=VND&vnp_ExpireDate=20241008145216&vnp_IpAddr=0%3A0%3A0%3A0%3A0%3A0%3A0%3A1&vnp_Locale=vn&vnp_OrderInfo=Thanh+toan+don+hang%3A95992024&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A8080%2Fapi%2Fpayment%2Fvnpay-callback&vnp_TmnCode=ZBJDDQ0C&vnp_TxnRef=33378891&vnp_Version=2.1.0&vnp_SecureHash=df367fd9585a756aa0cc1b5a181b467a64aa3c2a0762da761c3e917c4b70afbe877c0843d078fee0f6b3092086463b8b868bd3f29bb0a3e7758dd1fd46054fa8
+2024-10-08T15:22:16.463+07:00  WARN 14408 --- [spring-boot] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=37m12s307ms78µs200ns).
