@@ -1,65 +1,70 @@
-2024-10-07T09:09:42.815+07:00  INFO 17804 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 17804 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
-2024-10-07T09:09:42.823+07:00  INFO 17804 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
-2024-10-07T09:09:44.976+07:00  INFO 17804 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-10-07T09:09:45.119+07:00  INFO 17804 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 129 ms. Found 8 JPA repository interfaces.
-2024-10-07T09:09:46.063+07:00  INFO 17804 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-07T09:09:46.098+07:00  INFO 17804 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-07T09:09:46.099+07:00  INFO 17804 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
-2024-10-07T09:09:46.227+07:00  INFO 17804 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
-2024-10-07T09:09:46.227+07:00  INFO 17804 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3328 ms
-2024-10-07T09:09:46.542+07:00  INFO 17804 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-10-07T09:09:46.648+07:00  INFO 17804 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-10-07T09:09:46.698+07:00  INFO 17804 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-10-07T09:09:47.182+07:00  INFO 17804 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-10-07T09:09:47.216+07:00  INFO 17804 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-07T09:09:47.686+07:00  INFO 17804 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@ca10069
-2024-10-07T09:09:47.689+07:00  INFO 17804 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-07T09:09:49.569+07:00  INFO 17804 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-10-07T09:09:49.572+07:00  INFO 17804 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-10-07T09:09:50.562+07:00  INFO 17804 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-10-07T09:09:51.556+07:00  WARN 17804 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-07T09:09:51.589+07:00  INFO 17804 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
-2024-10-07T09:09:53.541+07:00  INFO 17804 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
-2024-10-07T09:09:53.556+07:00  INFO 17804 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 11.48 seconds (process running for 12.135)
-2024-10-07T09:09:59.764+07:00  INFO 17804 --- [spring-boot] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-10-07T09:09:59.765+07:00  INFO 17804 --- [spring-boot] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-10-07T09:09:59.767+07:00  INFO 17804 --- [spring-boot] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-10-07T09:09:59.947+07:00  INFO 17804 --- [spring-boot] [http-nio-8080-exec-2] c.e.homestay.security.CustomAuthDao      : loading user by username: khai
-2024-10-07T09:10:49.466+07:00 ERROR 17804 --- [spring-boot] [http-nio-8080-exec-5] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/api] threw exception [Request processing failed: com.example.homestay.exception.DateConflictException: Booking dates conflict with existing locked dates.] with root cause
+2024-10-08T08:52:25.872+07:00  WARN 17040 --- [spring-boot] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h31m52s869ms99µs300ns).
+2024-10-08T08:58:34.875+07:00  INFO 17040 --- [spring-boot] [http-nio-8080-exec-3] c.e.homestay.security.CustomAuthDao      : loading user by username: khai22
+2024-10-08T09:01:50.713+07:00  INFO 17040 --- [spring-boot] [http-nio-8080-exec-3] c.e.h.service.payment.VNPayServiceImpl   : Starting VnPay payment creation process...
+2024-10-08T09:01:50.758+07:00  INFO 17040 --- [spring-boot] [http-nio-8080-exec-3] c.e.h.service.payment.VNPayServiceImpl   : Generated VNPay payment URL: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=30000000&vnp_Command=pay&vnp_CreateDate=20241008090150&vnp_CurrCode=VND&vnp_ExpireDate=20241008091650&vnp_IpAddr=0%3A0%3A0%3A0%3A0%3A0%3A0%3A1&vnp_Locale=vn&vnp_OrderInfo=Thanh+toan+don+hang%3A70010737&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A8080%2Fapi%2Fpayment%2Fvnpay-callback&vnp_TmnCode=ZBJDDQ0C&vnp_TxnRef=13955179&vnp_Version=2.1.0&vnp_SecureHash=dc4c28326106664831491c0ad9f844aa658f11ccb4c3925479a8bd5ffcf310993bfd5186c55c4dbf29c70bd8b9d695dcc27ca91b6d54c527a00a97046a8a51fd
+2024-10-08T09:02:24.966+07:00  INFO 17040 --- [spring-boot] [http-nio-8080-exec-1] c.e.h.service.payment.VNPayServiceImpl   : VNPay callback received. Handling transaction...
+2024-10-08T09:02:25.008+07:00 ERROR 17040 --- [spring-boot] [http-nio-8080-exec-1] c.e.h.service.payment.VNPayServiceImpl   : Transaction failed with status code: 24
+2024-10-08T09:02:38.227+07:00  INFO 17040 --- [spring-boot] [http-nio-8080-exec-10] c.e.h.service.payment.VNPayServiceImpl   : Starting VnPay payment creation process...
+2024-10-08T09:02:38.228+07:00  INFO 17040 --- [spring-boot] [http-nio-8080-exec-10] c.e.h.service.payment.VNPayServiceImpl   : Generated VNPay payment URL: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=30000000&vnp_Command=pay&vnp_CreateDate=20241008090238&vnp_CurrCode=VND&vnp_ExpireDate=20241008091738&vnp_IpAddr=0%3A0%3A0%3A0%3A0%3A0%3A0%3A1&vnp_Locale=vn&vnp_OrderInfo=Thanh+toan+don+hang%3A28579368&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A8080%2Fapi%2Fpayment%2Fvnpay-callback&vnp_TmnCode=ZBJDDQ0C&vnp_TxnRef=71643079&vnp_Version=2.1.0&vnp_SecureHash=37f065b32e76d087a1377decc691d94c5e9f7e677407d388f3af4d49d0ee7a4e6562873a3fae720fc22c1edcd4f9a83b12e47b03fc5cf9c5dc5b88f12f396e1c
+2024-10-08T09:02:46.526+07:00  INFO 17040 --- [spring-boot] [http-nio-8080-exec-5] c.e.h.service.payment.VNPayServiceImpl   : VNPay callback received. Handling transaction...
+2024-10-08T09:02:46.550+07:00 ERROR 17040 --- [spring-boot] [http-nio-8080-exec-5] c.e.h.service.payment.VNPayServiceImpl   : Transaction failed with status code: 24
+2024-10-08T11:13:34.553+07:00  INFO 17040 --- [spring-boot] [http-nio-8080-exec-10] c.e.homestay.security.CustomAuthDao      : loading user by username: khai22
+2024-10-08T11:13:53.986+07:00  INFO 17040 --- [spring-boot] [http-nio-8080-exec-5] c.e.h.service.payment.VNPayServiceImpl   : Starting VnPay payment creation process...
+2024-10-08T11:13:53.986+07:00  INFO 17040 --- [spring-boot] [http-nio-8080-exec-5] c.e.h.service.payment.VNPayServiceImpl   : Generated VNPay payment URL: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=200000&vnp_Command=pay&vnp_CreateDate=20241008111353&vnp_CurrCode=VND&vnp_ExpireDate=20241008112853&vnp_IpAddr=0%3A0%3A0%3A0%3A0%3A0%3A0%3A1&vnp_Locale=vn&vnp_OrderInfo=Thanh+toan+don+hang%3A33786536&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A8080%2Fapi%2Fpayment%2Fvnpay-callback&vnp_TmnCode=ZBJDDQ0C&vnp_TxnRef=14003291&vnp_Version=2.1.0&vnp_SecureHash=74c90f2126fee3e6762fd472df5d34034a3d320b5ef5f74818d5605829dd2b072076fe4003aa2bdb674586630ca0aecbf849a8a957060e50b4936977ebd692cd
+2024-10-08T11:17:44.949+07:00  INFO 17040 --- [spring-boot] [http-nio-8080-exec-5] c.e.h.service.payment.VNPayServiceImpl   : Starting VnPay payment creation process...
+2024-10-08T11:17:44.957+07:00  INFO 17040 --- [spring-boot] [http-nio-8080-exec-5] c.e.h.service.payment.VNPayServiceImpl   : Generated VNPay payment URL: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=200000&vnp_Command=pay&vnp_CreateDate=20241008111744&vnp_CurrCode=VND&vnp_ExpireDate=20241008113244&vnp_IpAddr=0%3A0%3A0%3A0%3A0%3A0%3A0%3A1&vnp_Locale=vn&vnp_OrderInfo=Thanh+toan+don+hang%3A78895100&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A8080%2Fapi%2Fpayment%2Fvnpay-callback&vnp_TmnCode=ZBJDDQ0C&vnp_TxnRef=97713048&vnp_Version=2.1.0&vnp_SecureHash=416715f5756418c97c687695285320dc5d918f0441a04f7a9efaea98f67f7ff7f87d8b95ebdac176ff9d58a78a710c3d31cf0a78f5dd94a8f38e9fc1d5798766
+2024-10-08T11:27:20.978+07:00  INFO 17040 --- [spring-boot] [http-nio-8080-exec-5] c.e.homestay.security.CustomAuthDao      : loading user by username: khai
+2024-10-08T11:27:49.620+07:00  WARN 17040 --- [spring-boot] [http-nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1451, SQLState: 23000
+2024-10-08T11:27:49.620+07:00 ERROR 17040 --- [spring-boot] [http-nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : Cannot delete or update a parent row: a foreign key constraint fails (`homestay_booking`.`booking`, CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`homestay_id`) REFERENCES `homestay` (`id`))
+2024-10-08T11:27:49.685+07:00 ERROR 17040 --- [spring-boot] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/api] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [Cannot delete or update a parent row: a foreign key constraint fails (`homestay_booking`.`booking`, CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`homestay_id`) REFERENCES `homestay` (`id`))] [delete from homestay where id=?]; SQL [delete from homestay where id=?]; constraint [null]] with root cause
 
-com.example.homestay.exception.DateConflictException: Booking dates conflict with existing locked dates.
-	at com.example.homestay.service.booking.BookingServiceImpl.confirmBooking(BookingServiceImpl.java:167) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.12.jar:6.1.12]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.12.jar:6.1.12]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.12.jar:6.1.12]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.12.jar:6.1.12]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379) ~[spring-tx-6.1.12.jar:6.1.12]
+java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`homestay_booking`.`booking`, CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`homestay_id`) REFERENCES `homestay` (`id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:912) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1054) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:134) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:55) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.persister.entity.mutation.AbstractDeleteCoordinator.doStaticDelete(AbstractDeleteCoordinator.java:279) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.persister.entity.mutation.AbstractDeleteCoordinator.delete(AbstractDeleteCoordinator.java:87) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.action.internal.EntityDeleteAction.execute(EntityDeleteAction.java:131) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:632) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:499) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:371) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1425) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:487) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2324) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1981) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795) ~[spring-tx-6.1.12.jar:6.1.12]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.1.12.jar:6.1.12]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:663) ~[spring-tx-6.1.12.jar:6.1.12]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:413) ~[spring-tx-6.1.12.jar:6.1.12]
 	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.12.jar:6.1.12]
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.12.jar:6.1.12]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.12.jar:6.1.12]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720) ~[spring-aop-6.1.12.jar:6.1.12]
-	at com.example.homestay.service.booking.BookingServiceImpl$$SpringCGLIB$$0.confirmBooking(<generated>) ~[classes/:na]
-	at com.example.homestay.controller.BookingController.confirmBooking(BookingController.java:55) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.12.jar:6.1.12]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.12.jar:6.1.12]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.12.jar:6.1.12]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.12.jar:6.1.12]
-	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.proceed(AuthorizationManagerBeforeMethodInterceptor.java:269) ~[spring-security-core-6.3.3.jar:6.3.3]
-	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.attemptAuthorization(AuthorizationManagerBeforeMethodInterceptor.java:264) ~[spring-security-core-6.3.3.jar:6.3.3]
-	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:197) ~[spring-security-core-6.3.3.jar:6.3.3]
-	at org.springframework.security.config.annotation.method.configuration.DeferringMethodInterceptor.invoke(DeferringMethodInterceptor.java:44) ~[spring-security-config-6.3.3.jar:6.3.3]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.1.12.jar:6.1.12]
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.12.jar:6.1.12]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.12.jar:6.1.12]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720) ~[spring-aop-6.1.12.jar:6.1.12]
-	at com.example.homestay.controller.BookingController$$SpringCGLIB$$0.confirmBooking(<generated>) ~[classes/:na]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.3.3.jar:3.3.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.12.jar:6.1.12]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.12.jar:6.1.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.12.jar:6.1.12]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.12.jar:6.1.12]
+	at jdk.proxy2/jdk.proxy2.$Proxy159.deleteById(Unknown Source) ~[na:na]
+	at com.example.homestay.service.homestay.HomestayServiceImpl.delete(HomestayServiceImpl.java:80) ~[classes/:na]
+	at com.example.homestay.controller.HomestayController.delete(HomestayController.java:83) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -73,8 +78,8 @@ com.example.homestay.exception.DateConflictException: Booking dates conflict wit
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.12.jar:6.1.12]
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.12.jar:6.1.12]
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.12.jar:6.1.12]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.12.jar:6.1.12]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.28.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596) ~[tomcat-embed-core-10.1.28.jar:6.0]
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.12.jar:6.1.12]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.28.jar:6.0]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
@@ -164,37 +169,714 @@ com.example.homestay.exception.DateConflictException: Booking dates conflict wit
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
 
-2024-10-07T09:11:05.480+07:00  INFO 17804 --- [spring-boot] [http-nio-8080-exec-7] c.e.homestay.security.CustomAuthDao      : loading user by username: khai22
-2024-10-07T09:15:10.320+07:00  INFO 17804 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-10-07T09:15:10.333+07:00  INFO 17804 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-10-07T09:15:10.348+07:00  INFO 17804 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-10-07T09:16:11.283+07:00  INFO 23124 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 23124 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
-2024-10-07T09:16:11.283+07:00  INFO 23124 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
-2024-10-07T09:16:12.535+07:00  INFO 23124 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-10-07T09:16:12.643+07:00  INFO 23124 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 8 JPA repository interfaces.
-2024-10-07T09:16:13.460+07:00  INFO 23124 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-10-07T09:16:13.473+07:00  INFO 23124 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-07T09:16:13.473+07:00  INFO 23124 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
-2024-10-07T09:16:13.578+07:00  INFO 23124 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
-2024-10-07T09:16:13.579+07:00  INFO 23124 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2247 ms
-2024-10-07T09:16:13.822+07:00  INFO 23124 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-10-07T09:16:13.887+07:00  INFO 23124 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-10-07T09:16:13.957+07:00  INFO 23124 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-10-07T09:16:14.266+07:00  INFO 23124 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-10-07T09:16:14.301+07:00  INFO 23124 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-07T09:16:14.568+07:00  INFO 23124 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@45849604
-2024-10-07T09:16:14.570+07:00  INFO 23124 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-07T09:16:15.672+07:00  INFO 23124 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-10-07T09:16:15.677+07:00  INFO 23124 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-10-07T09:16:16.353+07:00  INFO 23124 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-10-07T09:16:17.046+07:00  WARN 23124 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-07T09:16:17.085+07:00  INFO 23124 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
-2024-10-07T09:16:18.497+07:00  INFO 23124 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
-2024-10-07T09:16:18.507+07:00  INFO 23124 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 7.804 seconds (process running for 8.202)
-2024-10-07T09:16:26.063+07:00  INFO 23124 --- [spring-boot] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-10-07T09:16:26.064+07:00  INFO 23124 --- [spring-boot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-10-07T09:16:26.066+07:00  INFO 23124 --- [spring-boot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-10-07T09:16:26.263+07:00  INFO 23124 --- [spring-boot] [http-nio-8080-exec-1] c.e.homestay.security.CustomAuthDao      : loading user by username: khai
-2024-10-07T09:19:40.650+07:00  INFO 23124 --- [spring-boot] [http-nio-8080-exec-10] c.e.homestay.security.CustomAuthDao      : loading user by username: khai
-2024-10-07T09:19:57.031+07:00  INFO 23124 --- [spring-boot] [http-nio-8080-exec-6] c.e.homestay.security.CustomAuthDao      : loading user by username: khai
-2024-10-07T09:20:06.848+07:00  INFO 23124 --- [spring-boot] [http-nio-8080-exec-3] c.e.homestay.security.CustomAuthDao      : loading user by username: khai22
+2024-10-08T11:28:00.350+07:00  WARN 17040 --- [spring-boot] [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1451, SQLState: 23000
+2024-10-08T11:28:00.358+07:00 ERROR 17040 --- [spring-boot] [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : Cannot delete or update a parent row: a foreign key constraint fails (`homestay_booking`.`booking`, CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`homestay_id`) REFERENCES `homestay` (`id`))
+2024-10-08T11:28:00.360+07:00 ERROR 17040 --- [spring-boot] [http-nio-8080-exec-4] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/api] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [Cannot delete or update a parent row: a foreign key constraint fails (`homestay_booking`.`booking`, CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`homestay_id`) REFERENCES `homestay` (`id`))] [delete from homestay where id=?]; SQL [delete from homestay where id=?]; constraint [null]] with root cause
+
+java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`homestay_booking`.`booking`, CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`homestay_id`) REFERENCES `homestay` (`id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:912) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1054) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:134) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:55) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.persister.entity.mutation.AbstractDeleteCoordinator.doStaticDelete(AbstractDeleteCoordinator.java:279) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.persister.entity.mutation.AbstractDeleteCoordinator.delete(AbstractDeleteCoordinator.java:87) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.action.internal.EntityDeleteAction.execute(EntityDeleteAction.java:131) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:632) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:499) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:371) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1425) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:487) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2324) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1981) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795) ~[spring-tx-6.1.12.jar:6.1.12]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.1.12.jar:6.1.12]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:663) ~[spring-tx-6.1.12.jar:6.1.12]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:413) ~[spring-tx-6.1.12.jar:6.1.12]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.12.jar:6.1.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.12.jar:6.1.12]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.1.12.jar:6.1.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.12.jar:6.1.12]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.3.3.jar:3.3.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.12.jar:6.1.12]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.12.jar:6.1.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.12.jar:6.1.12]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.12.jar:6.1.12]
+	at jdk.proxy2/jdk.proxy2.$Proxy159.deleteById(Unknown Source) ~[na:na]
+	at com.example.homestay.service.homestay.HomestayServiceImpl.delete(HomestayServiceImpl.java:80) ~[classes/:na]
+	at com.example.homestay.controller.HomestayController.delete(HomestayController.java:83) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596) ~[tomcat-embed-core-10.1.28.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.28.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:66) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter.doFilterInternal(BearerTokenAuthenticationFilter.java:145) ~[spring-security-oauth2-resource-server-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.12.jar:6.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2024-10-08T11:32:08.691+07:00  INFO 17040 --- [spring-boot] [http-nio-8080-exec-3] c.e.homestay.security.CustomAuthDao      : loading user by username: khai22
+2024-10-08T11:32:47.504+07:00  INFO 17040 --- [spring-boot] [http-nio-8080-exec-10] c.e.h.service.payment.VNPayServiceImpl   : Starting VnPay payment creation process...
+2024-10-08T11:32:47.504+07:00  INFO 17040 --- [spring-boot] [http-nio-8080-exec-10] c.e.h.service.payment.VNPayServiceImpl   : Generated VNPay payment URL: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=450000000&vnp_Command=pay&vnp_CreateDate=20241008113247&vnp_CurrCode=VND&vnp_ExpireDate=20241008114747&vnp_IpAddr=0%3A0%3A0%3A0%3A0%3A0%3A0%3A1&vnp_Locale=vn&vnp_OrderInfo=Thanh+toan+don+hang%3A91804208&vnp_OrderType=other&vnp_ReturnUrl=http%3A%2F%2Flocalhost%3A8080%2Fapi%2Fpayment%2Fvnpay-callback&vnp_TmnCode=ZBJDDQ0C&vnp_TxnRef=59287406&vnp_Version=2.1.0&vnp_SecureHash=01c0af6f3d1714b6060c77a77b56e0b0ac2c0e0544d9efb0fbd87a17f24485a766236195fe17b9679a445dedb345151992539932dcff081f48027ad71a4a349e
+2024-10-08T11:33:41.487+07:00  INFO 17040 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T11:33:41.501+07:00  INFO 17040 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T11:33:41.508+07:00  INFO 17040 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T11:33:59.638+07:00  INFO 26088 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 26088 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T11:33:59.638+07:00  INFO 26088 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T11:34:02.686+07:00  INFO 26088 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T11:34:02.807+07:00  INFO 26088 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 113 ms. Found 8 JPA repository interfaces.
+2024-10-08T11:34:03.967+07:00  INFO 26088 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T11:34:03.987+07:00  INFO 26088 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T11:34:03.988+07:00  INFO 26088 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T11:34:04.104+07:00  INFO 26088 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T11:34:04.104+07:00  INFO 26088 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4397 ms
+2024-10-08T11:34:04.488+07:00  INFO 26088 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T11:34:04.614+07:00  INFO 26088 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T11:34:04.694+07:00  INFO 26088 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T11:34:05.265+07:00  INFO 26088 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T11:34:05.336+07:00  INFO 26088 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T11:34:05.708+07:00  INFO 26088 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@211da640
+2024-10-08T11:34:05.708+07:00  INFO 26088 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T11:34:07.099+07:00  INFO 26088 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T11:34:07.107+07:00  INFO 26088 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T11:34:08.079+07:00  INFO 26088 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T11:34:09.122+07:00  WARN 26088 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T11:34:09.155+07:00  INFO 26088 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T11:34:10.772+07:00  INFO 26088 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T11:34:10.786+07:00  INFO 26088 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 11.868 seconds (process running for 13.533)
+2024-10-08T11:35:06.079+07:00  INFO 26088 --- [spring-boot] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T11:35:06.079+07:00  INFO 26088 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T11:35:06.079+07:00  INFO 26088 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-10-08T11:45:15.885+07:00  INFO 26088 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T11:45:15.902+07:00  INFO 26088 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T11:45:15.918+07:00  INFO 26088 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T11:45:20.632+07:00  INFO 10984 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 10984 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T11:45:20.636+07:00  INFO 10984 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T11:45:22.293+07:00  INFO 10984 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T11:45:22.402+07:00  INFO 10984 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 8 JPA repository interfaces.
+2024-10-08T11:45:23.519+07:00  INFO 10984 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T11:45:23.559+07:00  INFO 10984 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T11:45:23.559+07:00  INFO 10984 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T11:45:23.675+07:00  INFO 10984 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T11:45:23.676+07:00  INFO 10984 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2994 ms
+2024-10-08T11:45:24.065+07:00  INFO 10984 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T11:45:24.167+07:00  INFO 10984 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T11:45:24.215+07:00  INFO 10984 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T11:45:24.841+07:00  INFO 10984 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T11:45:24.929+07:00  INFO 10984 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T11:45:25.263+07:00  INFO 10984 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@18692e80
+2024-10-08T11:45:25.267+07:00  INFO 10984 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T11:45:26.870+07:00  INFO 10984 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T11:45:26.870+07:00  INFO 10984 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T11:45:27.780+07:00  INFO 10984 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T11:45:29.713+07:00  WARN 10984 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T11:45:29.795+07:00  INFO 10984 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T11:45:33.772+07:00  INFO 10984 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T11:45:33.812+07:00  INFO 10984 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 13.767 seconds (process running for 14.411)
+2024-10-08T11:45:50.523+07:00  INFO 10984 --- [spring-boot] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T11:45:50.523+07:00  INFO 10984 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T11:45:50.527+07:00  INFO 10984 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-10-08T11:48:33.184+07:00  WARN 10984 --- [spring-boot] [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'lang' for method parameter type String is not present]
+2024-10-08T11:48:49.206+07:00  WARN 10984 --- [spring-boot] [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'lang' for method parameter type String is not present]
+2024-10-08T11:54:46.211+07:00  WARN 10984 --- [spring-boot] [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'lang' for method parameter type String is not present]
+2024-10-08T11:54:48.138+07:00  WARN 10984 --- [spring-boot] [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'lang' for method parameter type String is not present]
+2024-10-08T11:59:12.064+07:00  INFO 10984 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T11:59:12.066+07:00  INFO 10984 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T11:59:12.073+07:00  INFO 10984 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T11:59:14.678+07:00  INFO 13428 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 13428 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T11:59:14.681+07:00  INFO 13428 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T11:59:16.022+07:00  INFO 13428 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T11:59:16.121+07:00  INFO 13428 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 8 JPA repository interfaces.
+2024-10-08T11:59:17.144+07:00  INFO 13428 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T11:59:17.161+07:00  INFO 13428 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T11:59:17.161+07:00  INFO 13428 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T11:59:17.269+07:00  INFO 13428 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T11:59:17.270+07:00  INFO 13428 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2513 ms
+2024-10-08T11:59:17.534+07:00  INFO 13428 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T11:59:17.630+07:00  INFO 13428 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T11:59:17.678+07:00  INFO 13428 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T11:59:18.049+07:00  INFO 13428 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T11:59:18.073+07:00  INFO 13428 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T11:59:18.384+07:00  INFO 13428 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@31fe0ce5
+2024-10-08T11:59:18.386+07:00  INFO 13428 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T11:59:19.706+07:00  INFO 13428 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T11:59:19.709+07:00  INFO 13428 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T11:59:21.080+07:00  INFO 13428 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T11:59:22.858+07:00  WARN 13428 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T11:59:22.908+07:00  INFO 13428 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T11:59:25.959+07:00  INFO 13428 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T11:59:25.987+07:00  INFO 13428 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 11.983 seconds (process running for 12.536)
+2024-10-08T11:59:46.837+07:00  INFO 13428 --- [spring-boot] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T11:59:46.837+07:00  INFO 13428 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T11:59:46.845+07:00  INFO 13428 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2024-10-08T12:06:50.571+07:00  INFO 13428 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:06:50.574+07:00  INFO 13428 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T12:06:50.581+07:00  INFO 13428 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T12:06:55.641+07:00  INFO 22488 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 22488 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T12:06:55.644+07:00  INFO 22488 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T12:06:57.038+07:00  INFO 22488 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T12:06:57.159+07:00  INFO 22488 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 8 JPA repository interfaces.
+2024-10-08T12:06:58.100+07:00  INFO 22488 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T12:06:58.125+07:00  INFO 22488 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T12:06:58.125+07:00  INFO 22488 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T12:06:58.303+07:00  INFO 22488 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T12:06:58.305+07:00  INFO 22488 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2583 ms
+2024-10-08T12:06:58.714+07:00  INFO 22488 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T12:06:58.802+07:00  INFO 22488 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T12:06:58.836+07:00  INFO 22488 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T12:06:59.244+07:00  INFO 22488 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T12:06:59.276+07:00  INFO 22488 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T12:06:59.594+07:00  INFO 22488 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@41a8f0d8
+2024-10-08T12:06:59.598+07:00  INFO 22488 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T12:07:01.213+07:00  INFO 22488 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T12:07:01.215+07:00  INFO 22488 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:07:02.002+07:00  INFO 22488 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T12:07:02.930+07:00  WARN 22488 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T12:07:02.975+07:00  INFO 22488 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T12:07:06.532+07:00  INFO 22488 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T12:07:06.565+07:00  INFO 22488 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 11.731 seconds (process running for 12.304)
+2024-10-08T12:07:13.311+07:00  INFO 22488 --- [spring-boot] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T12:07:13.311+07:00  INFO 22488 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T12:07:13.327+07:00  INFO 22488 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2024-10-08T12:09:54.780+07:00  INFO 22488 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:09:54.782+07:00  INFO 22488 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T12:09:54.799+07:00  INFO 22488 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T12:09:59.246+07:00  INFO 26072 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 26072 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T12:09:59.250+07:00  INFO 26072 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T12:10:00.779+07:00  INFO 26072 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T12:10:00.912+07:00  INFO 26072 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 125 ms. Found 8 JPA repository interfaces.
+2024-10-08T12:10:01.860+07:00  INFO 26072 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T12:10:01.873+07:00  INFO 26072 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T12:10:01.873+07:00  INFO 26072 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T12:10:01.973+07:00  INFO 26072 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T12:10:01.973+07:00  INFO 26072 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2649 ms
+2024-10-08T12:10:02.244+07:00  INFO 26072 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T12:10:02.318+07:00  INFO 26072 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T12:10:02.349+07:00  INFO 26072 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T12:10:02.662+07:00  INFO 26072 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T12:10:02.701+07:00  INFO 26072 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T12:10:02.955+07:00  INFO 26072 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3639b04
+2024-10-08T12:10:02.957+07:00  INFO 26072 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T12:10:04.340+07:00  INFO 26072 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T12:10:04.342+07:00  INFO 26072 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:10:05.082+07:00  INFO 26072 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T12:10:06.058+07:00  WARN 26072 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T12:10:06.090+07:00  INFO 26072 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T12:10:07.968+07:00  INFO 26072 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T12:10:07.980+07:00  INFO 26072 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 9.379 seconds (process running for 10.015)
+2024-10-08T12:10:28.803+07:00  INFO 26072 --- [spring-boot] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T12:10:28.803+07:00  INFO 26072 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T12:10:28.819+07:00  INFO 26072 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2024-10-08T12:11:23.123+07:00  INFO 26072 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:11:23.127+07:00  INFO 26072 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T12:11:23.136+07:00  INFO 26072 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T12:11:27.750+07:00  INFO 26664 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 26664 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T12:11:27.752+07:00  INFO 26664 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T12:11:29.219+07:00  INFO 26664 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T12:11:29.342+07:00  INFO 26664 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112 ms. Found 8 JPA repository interfaces.
+2024-10-08T12:11:30.348+07:00  INFO 26664 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T12:11:30.361+07:00  INFO 26664 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T12:11:30.361+07:00  INFO 26664 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T12:11:30.487+07:00  INFO 26664 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T12:11:30.487+07:00  INFO 26664 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2648 ms
+2024-10-08T12:11:30.759+07:00  INFO 26664 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T12:11:30.829+07:00  INFO 26664 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T12:11:30.864+07:00  INFO 26664 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T12:11:31.211+07:00  INFO 26664 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T12:11:31.242+07:00  INFO 26664 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T12:11:31.522+07:00  INFO 26664 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@54a6ef6
+2024-10-08T12:11:31.523+07:00  INFO 26664 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T12:11:32.711+07:00  INFO 26664 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T12:11:32.714+07:00  INFO 26664 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:11:33.389+07:00  INFO 26664 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T12:11:34.432+07:00  WARN 26664 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T12:11:34.494+07:00  INFO 26664 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T12:11:36.773+07:00  INFO 26664 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T12:11:36.801+07:00  INFO 26664 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 9.702 seconds (process running for 10.272)
+2024-10-08T12:11:48.484+07:00  INFO 26664 --- [spring-boot] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T12:11:48.484+07:00  INFO 26664 --- [spring-boot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T12:11:48.484+07:00  INFO 26664 --- [spring-boot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-10-08T12:18:02.846+07:00  INFO 26664 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:18:02.858+07:00  INFO 26664 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T12:18:02.866+07:00  INFO 26664 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T12:18:19.162+07:00  INFO 24644 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 24644 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T12:18:19.170+07:00  INFO 24644 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T12:18:21.651+07:00  INFO 24644 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T12:18:21.807+07:00  INFO 24644 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 141 ms. Found 8 JPA repository interfaces.
+2024-10-08T12:18:22.782+07:00  INFO 24644 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T12:18:22.799+07:00  INFO 24644 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T12:18:22.799+07:00  INFO 24644 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T12:18:22.913+07:00  INFO 24644 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T12:18:22.913+07:00  INFO 24644 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3667 ms
+2024-10-08T12:18:23.195+07:00  INFO 24644 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T12:18:23.283+07:00  INFO 24644 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T12:18:23.327+07:00  INFO 24644 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T12:18:23.650+07:00  INFO 24644 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T12:18:23.688+07:00  INFO 24644 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T12:18:24.001+07:00  INFO 24644 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a531637
+2024-10-08T12:18:24.004+07:00  INFO 24644 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T12:18:25.280+07:00  INFO 24644 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T12:18:25.280+07:00  INFO 24644 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:18:25.959+07:00  INFO 24644 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T12:18:26.653+07:00  WARN 24644 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T12:18:26.681+07:00  INFO 24644 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T12:18:28.335+07:00  INFO 24644 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T12:18:28.350+07:00  INFO 24644 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 9.909 seconds (process running for 10.622)
+2024-10-08T12:19:09.251+07:00  INFO 24644 --- [spring-boot] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T12:19:09.251+07:00  INFO 24644 --- [spring-boot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T12:19:09.252+07:00  INFO 24644 --- [spring-boot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-08T12:21:12.222+07:00  INFO 24644 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:21:12.224+07:00  INFO 24644 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T12:21:12.233+07:00  INFO 24644 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T12:21:15.157+07:00  INFO 21068 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 21068 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T12:21:15.159+07:00  INFO 21068 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T12:21:16.450+07:00  INFO 21068 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T12:21:16.558+07:00  INFO 21068 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 8 JPA repository interfaces.
+2024-10-08T12:21:17.478+07:00  INFO 21068 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T12:21:17.491+07:00  INFO 21068 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T12:21:17.492+07:00  INFO 21068 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T12:21:17.605+07:00  INFO 21068 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T12:21:17.606+07:00  INFO 21068 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2380 ms
+2024-10-08T12:21:17.888+07:00  INFO 21068 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T12:21:17.965+07:00  INFO 21068 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T12:21:18.011+07:00  INFO 21068 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T12:21:18.396+07:00  INFO 21068 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T12:21:18.436+07:00  INFO 21068 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T12:21:18.730+07:00  INFO 21068 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4641f66c
+2024-10-08T12:21:18.731+07:00  INFO 21068 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T12:21:20.137+07:00  INFO 21068 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T12:21:20.139+07:00  INFO 21068 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:21:20.879+07:00  INFO 21068 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T12:21:21.798+07:00  WARN 21068 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T12:21:21.834+07:00  INFO 21068 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T12:21:23.766+07:00  INFO 21068 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T12:21:23.778+07:00  INFO 21068 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 9.26 seconds (process running for 9.83)
+2024-10-08T12:21:31.545+07:00  INFO 21068 --- [spring-boot] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T12:21:31.546+07:00  INFO 21068 --- [spring-boot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T12:21:31.547+07:00  INFO 21068 --- [spring-boot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-08T12:21:53.164+07:00  INFO 21068 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:21:53.166+07:00  INFO 21068 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T12:21:53.173+07:00  INFO 21068 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T12:21:55.900+07:00  INFO 24652 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 24652 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T12:21:55.902+07:00  INFO 24652 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T12:21:57.348+07:00  INFO 24652 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T12:21:57.500+07:00  INFO 24652 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 143 ms. Found 8 JPA repository interfaces.
+2024-10-08T12:21:58.651+07:00  INFO 24652 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T12:21:58.666+07:00  INFO 24652 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T12:21:58.666+07:00  INFO 24652 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T12:21:58.768+07:00  INFO 24652 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T12:21:58.768+07:00  INFO 24652 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2785 ms
+2024-10-08T12:21:59.021+07:00  INFO 24652 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T12:21:59.104+07:00  INFO 24652 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T12:21:59.135+07:00  INFO 24652 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T12:21:59.626+07:00  INFO 24652 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T12:21:59.659+07:00  INFO 24652 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T12:21:59.993+07:00  INFO 24652 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@178dc733
+2024-10-08T12:21:59.998+07:00  INFO 24652 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T12:22:01.498+07:00  INFO 24652 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T12:22:01.500+07:00  INFO 24652 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:22:02.169+07:00  INFO 24652 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T12:22:03.040+07:00  WARN 24652 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T12:22:03.072+07:00  INFO 24652 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T12:22:05.119+07:00  INFO 24652 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T12:22:05.143+07:00  INFO 24652 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 10.026 seconds (process running for 10.663)
+2024-10-08T12:22:14.272+07:00  INFO 24652 --- [spring-boot] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T12:22:14.272+07:00  INFO 24652 --- [spring-boot] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T12:22:14.277+07:00  INFO 24652 --- [spring-boot] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2024-10-08T12:25:10.906+07:00  INFO 24652 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:25:10.908+07:00  INFO 24652 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T12:25:10.916+07:00  INFO 24652 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T12:25:14.084+07:00  INFO 19232 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 19232 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T12:25:14.088+07:00  INFO 19232 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T12:25:15.645+07:00  INFO 19232 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T12:25:15.769+07:00  INFO 19232 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 115 ms. Found 8 JPA repository interfaces.
+2024-10-08T12:25:16.712+07:00  INFO 19232 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T12:25:16.839+07:00  INFO 19232 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2692 ms
+2024-10-08T12:25:17.093+07:00  INFO 19232 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T12:25:17.159+07:00  INFO 19232 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T12:25:44.509+07:00  INFO 10484 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 10484 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T12:25:44.512+07:00  INFO 10484 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T12:25:45.854+07:00  INFO 10484 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T12:25:46.018+07:00  INFO 10484 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 154 ms. Found 8 JPA repository interfaces.
+2024-10-08T12:25:47.059+07:00  INFO 10484 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T12:25:47.090+07:00  INFO 10484 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T12:25:47.090+07:00  INFO 10484 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T12:25:47.225+07:00  INFO 10484 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T12:25:47.225+07:00  INFO 10484 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2649 ms
+2024-10-08T12:25:47.552+07:00  INFO 10484 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T12:25:47.643+07:00  INFO 10484 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T12:25:47.692+07:00  INFO 10484 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T12:25:48.077+07:00  INFO 10484 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T12:25:48.136+07:00  INFO 10484 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T12:25:48.562+07:00  INFO 10484 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@178dc733
+2024-10-08T12:25:48.565+07:00  INFO 10484 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T12:25:50.051+07:00  INFO 10484 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T12:25:50.053+07:00  INFO 10484 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:25:50.816+07:00  INFO 10484 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T12:25:51.998+07:00  WARN 10484 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T12:25:52.028+07:00  INFO 10484 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T12:25:54.351+07:00  INFO 10484 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T12:25:54.362+07:00  INFO 10484 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 10.558 seconds (process running for 11.095)
+2024-10-08T12:26:27.291+07:00  INFO 10484 --- [spring-boot] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T12:26:27.300+07:00  INFO 10484 --- [spring-boot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T12:26:27.300+07:00  INFO 10484 --- [spring-boot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-10-08T12:27:04.487+07:00  INFO 10484 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:27:04.490+07:00  INFO 10484 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T12:27:04.522+07:00  INFO 10484 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T12:27:07.618+07:00  INFO 10548 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 10548 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T12:27:07.621+07:00  INFO 10548 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T12:27:09.055+07:00  INFO 10548 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T12:27:09.231+07:00  INFO 10548 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 163 ms. Found 8 JPA repository interfaces.
+2024-10-08T12:27:10.197+07:00  INFO 10548 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T12:27:10.213+07:00  INFO 10548 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T12:27:10.213+07:00  INFO 10548 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T12:27:10.291+07:00  INFO 10548 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T12:27:10.291+07:00  INFO 10548 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2569 ms
+2024-10-08T12:27:10.495+07:00  INFO 10548 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T12:27:10.693+07:00  INFO 10548 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T12:27:10.773+07:00  INFO 10548 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T12:27:11.085+07:00  INFO 10548 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T12:27:11.122+07:00  INFO 10548 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T12:27:11.423+07:00  INFO 10548 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3c97f5e9
+2024-10-08T12:27:11.426+07:00  INFO 10548 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T12:27:12.653+07:00  INFO 10548 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T12:27:12.653+07:00  INFO 10548 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:27:13.457+07:00  INFO 10548 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T12:27:14.739+07:00  WARN 10548 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T12:27:14.818+07:00  INFO 10548 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T12:27:18.371+07:00  INFO 10548 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T12:27:18.393+07:00  INFO 10548 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 11.499 seconds (process running for 12.101)
+2024-10-08T12:27:27.920+07:00  INFO 10548 --- [spring-boot] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T12:27:27.921+07:00  INFO 10548 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T12:27:27.924+07:00  INFO 10548 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-10-08T12:27:42.265+07:00  INFO 10548 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:27:42.268+07:00  INFO 10548 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T12:27:42.276+07:00  INFO 10548 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T12:27:47.134+07:00  INFO 21064 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 21064 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T12:27:47.136+07:00  INFO 21064 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T12:27:48.573+07:00  INFO 21064 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T12:27:48.711+07:00  INFO 21064 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128 ms. Found 8 JPA repository interfaces.
+2024-10-08T12:27:49.579+07:00  INFO 21064 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T12:27:49.599+07:00  INFO 21064 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T12:27:49.599+07:00  INFO 21064 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T12:27:49.693+07:00  INFO 21064 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T12:27:49.694+07:00  INFO 21064 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2507 ms
+2024-10-08T12:27:49.932+07:00  INFO 21064 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T12:27:50.002+07:00  INFO 21064 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T12:27:50.043+07:00  INFO 21064 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T12:27:50.411+07:00  INFO 21064 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T12:27:50.450+07:00  INFO 21064 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T12:27:50.776+07:00  INFO 21064 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5be69f7e
+2024-10-08T12:27:50.780+07:00  INFO 21064 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T12:27:52.089+07:00  INFO 21064 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T12:27:52.093+07:00  INFO 21064 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:27:52.778+07:00  INFO 21064 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T12:27:53.542+07:00  WARN 21064 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T12:27:53.575+07:00  INFO 21064 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T12:27:55.135+07:00  INFO 21064 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T12:27:55.148+07:00  INFO 21064 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 8.689 seconds (process running for 9.303)
+2024-10-08T12:28:00.688+07:00  INFO 21064 --- [spring-boot] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T12:28:00.689+07:00  INFO 21064 --- [spring-boot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T12:28:00.690+07:00  INFO 21064 --- [spring-boot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-08T12:29:45.583+07:00  INFO 21064 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:29:45.588+07:00  INFO 21064 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T12:29:45.596+07:00  INFO 21064 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T12:29:49.922+07:00  INFO 14996 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 14996 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T12:29:49.925+07:00  INFO 14996 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T12:29:51.351+07:00  INFO 14996 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T12:29:51.451+07:00  INFO 14996 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 8 JPA repository interfaces.
+2024-10-08T12:29:52.348+07:00  INFO 14996 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T12:29:52.371+07:00  INFO 14996 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T12:29:52.376+07:00  INFO 14996 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T12:29:52.496+07:00  INFO 14996 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T12:29:52.497+07:00  INFO 14996 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2503 ms
+2024-10-08T12:29:52.758+07:00  INFO 14996 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T12:29:52.844+07:00  INFO 14996 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T12:29:52.892+07:00  INFO 14996 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T12:29:53.245+07:00  INFO 14996 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T12:29:53.287+07:00  INFO 14996 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T12:29:53.607+07:00  INFO 14996 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@22a63740
+2024-10-08T12:29:53.610+07:00  INFO 14996 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T12:29:54.732+07:00  INFO 14996 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T12:29:54.735+07:00  INFO 14996 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:29:55.472+07:00  INFO 14996 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T12:29:56.459+07:00  WARN 14996 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T12:29:56.498+07:00  INFO 14996 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T12:29:58.524+07:00  INFO 14996 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T12:29:58.550+07:00  INFO 14996 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 9.29 seconds (process running for 9.84)
+2024-10-08T12:30:38.805+07:00  INFO 14996 --- [spring-boot] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T12:30:38.805+07:00  INFO 14996 --- [spring-boot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T12:30:38.807+07:00  INFO 14996 --- [spring-boot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-08T12:41:36.885+07:00  INFO 14996 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:41:36.888+07:00  INFO 14996 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T12:41:36.910+07:00  INFO 14996 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T12:41:43.100+07:00  INFO 19084 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 19084 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T12:41:43.106+07:00  INFO 19084 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T12:41:44.991+07:00  INFO 19084 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T12:41:45.207+07:00  INFO 19084 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 195 ms. Found 8 JPA repository interfaces.
+2024-10-08T12:41:46.574+07:00  INFO 19084 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T12:41:46.600+07:00  INFO 19084 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T12:41:46.601+07:00  INFO 19084 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T12:41:46.749+07:00  INFO 19084 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T12:41:46.750+07:00  INFO 19084 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3548 ms
+2024-10-08T12:41:47.081+07:00  INFO 19084 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T12:41:47.203+07:00  INFO 19084 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T12:41:47.269+07:00  INFO 19084 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T12:41:47.782+07:00  INFO 19084 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T12:41:47.842+07:00  INFO 19084 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T12:41:48.285+07:00  INFO 19084 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@78fb72cb
+2024-10-08T12:41:48.289+07:00  INFO 19084 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T12:41:50.254+07:00  INFO 19084 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T12:41:50.258+07:00  INFO 19084 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:41:51.973+07:00  INFO 19084 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T12:41:53.935+07:00  WARN 19084 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T12:41:54.028+07:00  INFO 19084 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T12:41:58.762+07:00  INFO 19084 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T12:41:58.822+07:00  INFO 19084 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 16.652 seconds (process running for 17.393)
+2024-10-08T12:42:03.186+07:00  INFO 19084 --- [spring-boot] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T12:42:03.186+07:00  INFO 19084 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T12:42:03.193+07:00  INFO 19084 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2024-10-08T12:42:51.894+07:00  INFO 19084 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:42:51.897+07:00  INFO 19084 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T12:42:51.913+07:00  INFO 19084 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T12:42:55.131+07:00  INFO 19020 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 19020 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T12:42:55.135+07:00  INFO 19020 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T12:42:57.127+07:00  INFO 19020 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T12:42:57.348+07:00  INFO 19020 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 194 ms. Found 8 JPA repository interfaces.
+2024-10-08T12:42:58.824+07:00  INFO 19020 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T12:42:58.849+07:00  INFO 19020 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T12:42:58.850+07:00  INFO 19020 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T12:42:59.005+07:00  INFO 19020 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T12:42:59.006+07:00  INFO 19020 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3783 ms
+2024-10-08T12:42:59.334+07:00  INFO 19020 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T12:42:59.432+07:00  INFO 19020 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T12:42:59.487+07:00  INFO 19020 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T12:43:00.025+07:00  INFO 19020 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T12:43:00.079+07:00  INFO 19020 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T12:43:00.611+07:00  INFO 19020 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@779b4f9c
+2024-10-08T12:43:00.615+07:00  INFO 19020 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T12:43:02.793+07:00  INFO 19020 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T12:43:02.796+07:00  INFO 19020 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:43:03.730+07:00  INFO 19020 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T12:43:05.480+07:00  WARN 19020 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T12:43:05.571+07:00  INFO 19020 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T12:43:14.046+07:00  INFO 19020 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T12:43:14.123+07:00  INFO 19020 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 19.872 seconds (process running for 20.62)
+2024-10-08T12:43:35.595+07:00  INFO 19020 --- [spring-boot] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T12:43:35.595+07:00  INFO 19020 --- [spring-boot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T12:43:35.595+07:00  INFO 19020 --- [spring-boot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-10-08T12:45:27.404+07:00  INFO 19020 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:45:27.413+07:00  INFO 19020 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T12:45:27.436+07:00  INFO 19020 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T12:45:34.681+07:00  INFO 25756 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 25756 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T12:45:34.684+07:00  INFO 25756 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T12:45:36.495+07:00  INFO 25756 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T12:45:36.684+07:00  INFO 25756 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 175 ms. Found 8 JPA repository interfaces.
+2024-10-08T12:45:37.985+07:00  INFO 25756 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T12:45:38.010+07:00  INFO 25756 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T12:45:38.011+07:00  INFO 25756 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T12:45:38.200+07:00  INFO 25756 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T12:45:38.201+07:00  INFO 25756 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3434 ms
+2024-10-08T12:45:38.841+07:00  INFO 25756 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T12:45:39.059+07:00  INFO 25756 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T12:45:39.172+07:00  INFO 25756 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T12:45:40.454+07:00  INFO 25756 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T12:45:40.561+07:00  INFO 25756 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T12:45:41.989+07:00  INFO 25756 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@78fb72cb
+2024-10-08T12:45:42.000+07:00  INFO 25756 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T12:45:47.663+07:00  INFO 25756 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T12:45:47.674+07:00  INFO 25756 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T12:45:52.490+07:00  INFO 25756 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T12:45:58.251+07:00  WARN 25756 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T12:45:58.484+07:00  INFO 25756 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T12:46:08.652+07:00  INFO 25756 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T12:46:08.735+07:00  INFO 25756 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 34.889 seconds (process running for 35.524)
+2024-10-08T12:46:19.864+07:00  INFO 25756 --- [spring-boot] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T12:46:19.868+07:00  INFO 25756 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T12:46:19.868+07:00  INFO 25756 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-10-08T12:48:50.201+07:00  INFO 25756 --- [spring-boot] [http-nio-8080-exec-2] c.e.homestay.security.CustomAuthDao      : loading user by username: khai22
+2024-10-08T12:54:11.896+07:00  INFO 25756 --- [spring-boot] [http-nio-8080-exec-9] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in the request target [/api/pdf/bill/46?lang=[object+Object] ]. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:482) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:257) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.28.jar:10.1.28]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2024-10-08T13:50:42.809+07:00  INFO 25756 --- [spring-boot] [http-nio-8080-exec-3] c.e.homestay.security.CustomAuthDao      : loading user by username: khai
+2024-10-08T13:54:08.959+07:00  INFO 25756 --- [spring-boot] [http-nio-8080-exec-10] c.e.homestay.security.CustomAuthDao      : loading user by username: khai22
+2024-10-08T13:57:10.125+07:00  INFO 25756 --- [spring-boot] [http-nio-8080-exec-6] c.e.homestay.security.CustomAuthDao      : loading user by username: khai22
+2024-10-08T13:59:59.630+07:00  INFO 25756 --- [spring-boot] [http-nio-8080-exec-3] c.e.homestay.security.CustomAuthDao      : loading user by username: khai22
+2024-10-08T14:09:18.188+07:00  INFO 25756 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T14:09:18.194+07:00  INFO 25756 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T14:09:18.201+07:00  INFO 25756 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T14:09:20.959+07:00  INFO 22124 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 22124 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T14:09:20.962+07:00  INFO 22124 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T14:09:22.004+07:00  INFO 22124 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T14:09:22.130+07:00  INFO 22124 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 119 ms. Found 8 JPA repository interfaces.
+2024-10-08T14:09:22.833+07:00  INFO 22124 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T14:09:22.847+07:00  INFO 22124 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T14:09:22.847+07:00  INFO 22124 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T14:09:22.919+07:00  INFO 22124 --- [spring-boot] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-10-08T14:09:22.920+07:00  INFO 22124 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1901 ms
+2024-10-08T14:09:23.114+07:00  INFO 22124 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T14:09:23.194+07:00  INFO 22124 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T14:09:23.232+07:00  INFO 22124 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T14:09:23.538+07:00  INFO 22124 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T14:09:23.569+07:00  INFO 22124 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T14:09:23.844+07:00  INFO 22124 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@294ebe11
+2024-10-08T14:09:23.846+07:00  INFO 22124 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T14:09:24.930+07:00  INFO 22124 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T14:09:24.933+07:00  INFO 22124 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T14:09:25.563+07:00  INFO 22124 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T14:09:26.260+07:00  WARN 22124 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T14:09:26.289+07:00  INFO 22124 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T14:09:27.671+07:00  INFO 22124 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T14:09:27.684+07:00  INFO 22124 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 7.265 seconds (process running for 7.671)
+2024-10-08T14:09:45.751+07:00  INFO 22124 --- [spring-boot] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T14:09:45.751+07:00  INFO 22124 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T14:09:45.754+07:00  INFO 22124 --- [spring-boot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-10-08T14:13:48.959+07:00  INFO 22124 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T14:13:48.962+07:00  INFO 22124 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T14:13:48.972+07:00  INFO 22124 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T14:13:51.211+07:00  INFO 26316 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Starting HomestayApplication using Java 17.0.12 with PID 26316 (D:\Project\Homestay-Backend\target\classes started by Admin in D:\Project\Homestay-Backend)
+2024-10-08T14:13:51.215+07:00  INFO 26316 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : The following 1 profile is active: "dev"
+2024-10-08T14:13:52.294+07:00  INFO 26316 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T14:13:52.401+07:00  INFO 26316 --- [spring-boot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 8 JPA repository interfaces.
+2024-10-08T14:13:53.135+07:00  INFO 26316 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T14:13:53.149+07:00  INFO 26316 --- [spring-boot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T14:13:53.149+07:00  INFO 26316 --- [spring-boot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-08T14:13:53.229+07:00  INFO 26316 --- [spring-boot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1958 ms
+2024-10-08T14:13:53.454+07:00  INFO 26316 --- [spring-boot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T14:13:53.519+07:00  INFO 26316 --- [spring-boot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T14:13:53.552+07:00  INFO 26316 --- [spring-boot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T14:13:53.845+07:00  INFO 26316 --- [spring-boot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T14:13:53.876+07:00  INFO 26316 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T14:13:54.158+07:00  INFO 26316 --- [spring-boot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6b64429e
+2024-10-08T14:13:54.160+07:00  INFO 26316 --- [spring-boot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T14:13:55.445+07:00  INFO 26316 --- [spring-boot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T14:13:55.448+07:00  INFO 26316 --- [spring-boot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T14:13:56.037+07:00  INFO 26316 --- [spring-boot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T14:13:56.739+07:00  WARN 26316 --- [spring-boot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-08T14:13:56.766+07:00  INFO 26316 --- [spring-boot] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customAuthDao
+2024-10-08T14:13:58.191+07:00  INFO 26316 --- [spring-boot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-10-08T14:13:58.203+07:00  INFO 26316 --- [spring-boot] [main] c.example.homestay.HomestayApplication   : Started HomestayApplication in 7.583 seconds (process running for 8.102)
+2024-10-08T14:13:58.352+07:00  INFO 26316 --- [spring-boot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T14:13:58.354+07:00  INFO 26316 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T14:13:58.363+07:00  INFO 26316 --- [spring-boot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
